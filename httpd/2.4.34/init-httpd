@@ -1,0 +1,23 @@
+#!/bin/bash
+# chkconfig: 3  80 10
+# description: Srcipt para iniciar http
+
+case "$1" in
+  start)
+    /opt/httpd/bin/apachectl start
+    ;;
+  stop)
+    /opt/httpd/bin/apachectl stop
+    ;;
+  restart)
+    /opt/httpd/bin/apachectl restart
+    ;;
+  reload)
+    /opt/httpd/bin/apachectl reload
+    ;;
+  test)
+    /opt/httpd/bin/apachectl configtest
+    ;;
+  *)
+    echo "caso desconocido (start|stop|restart|reload|test)"
+esac

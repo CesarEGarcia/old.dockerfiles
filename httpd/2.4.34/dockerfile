@@ -1,0 +1,74 @@
+FROM centos:7
+
+RUN \
+	   groupadd -g 48 apache \
+	&& useradd -u 48 -g apache -d /opt/httpd -s /sbin/nologin -M apache \
+	&& mkdir /var/log/httpd \
+	&& chown apache.apache /var/log/httpd 
+
+RUN \
+	   yum -y install pcre-devel \
+	&& yum -y install expat-devel \
+	&& yum -y install wget
+
+
+WORKDIR /usr/local/src
+
+
+RUN \
+	   yum -y install gcc \
+	&& yum -y install openssl-devel \
+	&& yum -y install make
+
+
+RUN \
+	wget http://apache.uvigo.es//apr/apr-1.6.3.tar.gz \ 
+	&& tar xzvf apr-1.6.3.tar.gz \
+	&& rm apr-1.6.3.tar.gz \
+	&& cd apr-1.6.3 \
+	&& ./configure \ 
+		--prefix=/opt/apr-1.6.3 \
+	&& make \
+	&& make install
+
+
+RUN \
+	wget http://apache.uvigo.es//apr/apr-util-1.6.1.tar.gz \ 
+	&& tar xzvf apr-util-1.6.1.tar.gz \
+	&& rm apr-util-1.6.1.tar.gz \
+	&& cd apr-util-1.6.1 \
+	&& ./configure \
+		--prefix=/opt/apr-util-1.6.1 \
+		--with-apr=/opt/apr-1.6.3 \
+	&& make \
+	&& make install
+
+
+ENV VERSION 2.4.34
+
+
+RUN \
+	   wget http://apache.rediris.es//httpd/httpd-${VERSION}.tar.gz \
+	&& tar xzvf httpd-${VERSION}.tar.gz \
+	&& rm httpd-${VERSION}.tar.gz \
+	&& cd httpd-${VERSION} \
+	&& ./configure --prefix=/opt/httpd \
+			--with-apr=/opt/apr-1.6.3 \
+			--with-apr-util=/opt/apr-util-1.6.1 \
+			--enable-ssl \
+ 	&& make \
+ 	&& make install
+
+RUN \
+	mkdir /home/web	
+
+RUN yum install -y net-tools
+
+COPY httpd.conf     /opt/httpd/conf/httpd.conf
+COPY directory.conf /opt/httpd/conf/directory.conf
+COPY alias.conf     /opt/httpd/conf/alias.conf
+COPY modules.conf   /opt/httpd/conf/modules.conf
+
+CMD /opt/httpd/bin/apachectl start -DFOREGROUND
+
+
