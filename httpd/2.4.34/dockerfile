@@ -9,17 +9,13 @@ RUN \
 RUN \
 	   yum -y install pcre-devel \
 	&& yum -y install expat-devel \
-	&& yum -y install wget
-
+	&& yum -y install gcc \
+	&& yum -y install openssl-devel \
+	&& yum -y install make \
+	&& yum -y install wget \
+	&& yum -y install perl
 
 WORKDIR /usr/local/src
-
-
-RUN \
-	   yum -y install gcc \
-	&& yum -y install openssl-devel \
-	&& yum -y install make
-
 
 RUN \
 	wget http://apache.uvigo.es//apr/apr-1.6.3.tar.gz \ 
@@ -29,7 +25,9 @@ RUN \
 	&& ./configure \ 
 		--prefix=/opt/apr-1.6.3 \
 	&& make \
-	&& make install
+	&& make install \
+	&& cd .. \
+	&& rm -Rf apr-1.6.3
 
 
 RUN \
@@ -41,7 +39,9 @@ RUN \
 		--prefix=/opt/apr-util-1.6.1 \
 		--with-apr=/opt/apr-1.6.3 \
 	&& make \
-	&& make install
+	&& make install \
+	&& cd .. \
+	&& rm -Rf apr-util-1.6.1
 
 
 ENV VERSION 2.4.34
@@ -57,12 +57,18 @@ RUN \
 			--with-apr-util=/opt/apr-util-1.6.1 \
 			--enable-ssl \
  	&& make \
- 	&& make install
+ 	&& make install \
+	&& cd .. \
+	&& rm -Rf httpd-${VERSION} \
+	&& mkdir /home/web
 
-RUN \
-	mkdir /home/web	
-
-RUN yum install -y net-tools
+#RUN \
+#	   yum -y remove pcre-devel \
+#	&& yum -y remove expat-devel \
+#	&& yum -y remove gcc \
+#	&& yum -y remove openssl-devel \
+#	&& yum -y remove make \
+#	&& yum -y remove wget 
 
 COPY httpd.conf     /opt/httpd/conf/httpd.conf
 COPY directory.conf /opt/httpd/conf/directory.conf
