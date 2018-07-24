@@ -38,8 +38,10 @@ $cfg['Servers'][$i]['user']     = MYSQL_USUARIO;
 $cfg['Servers'][$i]['password'] = MYSQL_CLAVE;
 $cfg['Servers'][$i]['only_db']  = defined ('MYSQL_BASEDATOSADMIN') ? explode (',', MYSQL_BASEDATOSADMIN) : MYSQL_BASEDATOS;
 
-$cfg['Servers'][$i]['controluser'] = 'phpMyAdmin';
-$cfg['Servers'][$i]['controlpass'] = 'phpMdmn_';
+// $cfg['Servers'][$i]['controluser'] = 'phpMyAdmin';
+// $cfg['Servers'][$i]['controlpass'] = 'phpMdmn_';
+$cfg['Servers'][$i]['controluser'] = 'root';
+$cfg['Servers'][$i]['controlpass'] = 'dmnstrdr';
 $cfg['Servers'][$i]['pmadb']       = 'phpmyadmin';
 
 $cfg['Servers'][$i]['bookmarktable']     = 'pma__bookmark';
