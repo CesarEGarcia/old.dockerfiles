@@ -100,12 +100,3 @@ RUN set -x \
     && yum -y remove make \
     && yum -y remove autoconf \
     && yum -y remove wget 
-
-RUN yum -y install wget
-
-RUN \
-    cd /opt
-    &&  wget https://files.phpmyadmin.net/phpMyAdmin/4.8.2/phpMyAdmin-4.8.2-all-languages.tar.gz \
-    && tar xzvf phpMyAdmin-4.8.2-all-languages.tar.gz \
-    && rm phpMyAdmin-4.8.2-all-languages.tar.gz \
-    && mv phpMyAdmin-4.8.2-all-languages phpMyAdmin \
