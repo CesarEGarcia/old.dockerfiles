@@ -1,0 +1,8 @@
+<?PHP
+
+	define ('MYSQL_SERVIDOR',   'localhost');
+	define ('MYSQL_BASEDATOS',  '');
+	define ('MYSQL_USUARIO',    'root');
+	define ('MYSQL_CLAVE',      'dmnstrdr');
+
+?>

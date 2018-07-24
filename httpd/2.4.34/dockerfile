@@ -54,6 +54,9 @@ RUN set -x \
 	&& cd .. \
 	&& rm -Rf httpd-${VERSION} \
 	&& mkdir /home/web \
+	&& mkdir /home/contenidos \
+	&& mkdir /home/cache \
+	&& chown apache.apache /home/web /home/contenidos /home/cache \
 	\
 	&& yum -y remove pcre-devel \
 	&& yum -y remove expat-devel \

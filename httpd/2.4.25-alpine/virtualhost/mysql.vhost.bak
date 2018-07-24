@@ -1,0 +1,4 @@
+<VirtualHost *:80>
+        ServerName mysql
+        DocumentRoot "/opt/servidor/phpMyAdmin"
+</VirtualHost>

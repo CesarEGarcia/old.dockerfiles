@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+    ServerName error
+    DocumentRoot "/opt/servidor/error"
+
+	<Directory "/opt/servidor/error">
+        	AllowOverride None
+	        Options None
+        	Order allow,deny
+	        Allow from all
+	</Directory>
+</VirtualHost>

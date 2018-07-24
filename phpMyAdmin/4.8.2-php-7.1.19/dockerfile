@@ -1,0 +1,16 @@
+FROM php:7.1.19
+
+COPY files/ /
+
+RUN set -x \
+    && yum -y install wget \
+    \
+    && cd /opt \
+    &&  wget https://files.phpmyadmin.net/phpMyAdmin/4.8.2/phpMyAdmin-4.8.2-all-languages.tar.gz \
+    && tar xzvf phpMyAdmin-4.8.2-all-languages.tar.gz \
+    && rm phpMyAdmin-4.8.2-all-languages.tar.gz \
+    && cp -r phpMyAdmin-4.8.2-all-languages/. phpMyAdmin \
+    && rm -R phpMyAdmin-4.8.2-all-languages \
+    \
+    && yum -y remove wget 
+
