@@ -1,0 +1,32 @@
+FROM centos:7
+
+LABEL VERSION 2.3.2.1
+
+RUN set -x \
+    && groupadd -g dovecot \
+    && groupadd -g dovenull \
+    && useradd -d /opt/dovecot -s /bin/false -g dovecot -M dovecot \
+    && useradd -d /opt/dovecot -s /bin/false -g dovenull -M dovenull \
+    \
+    && yum -y install wget
+
+RUN set -x \
+    && cd /usr/local/src \
+    && wget https://www.dovecot.org/releases/2.3/dovecot-2.3.2.1.tar.gz \
+    && tar xzvf dovecot-2.3.2.1.tar.gz \
+    && rm dovecot-2.3.2.1.tar.gz \
+    && cd dovecot-2.3.2.1 
+
+RUN set -x \
+    && cd /usr/local/src/dovecot-2.3.2.1 \
+    && ./configure \
+        --prefix=/opt/dovecot \
+        --without-shadow \
+        --without-pam \
+        --without-gssapi \
+        --without-ldap \
+        --without-mysql \
+        --without-pgsql \
+        --without-sqlite
+
+    
