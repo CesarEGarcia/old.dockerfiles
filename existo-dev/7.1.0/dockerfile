@@ -1,0 +1,34 @@
+FROM php:7.1.19
+
+LABEL VERSION existo-dev:7.1.0
+LABEL HTTPD 3.4.34
+LABEL PHP 7.1.19
+LABEL PHPMYADMIN 4.8.2
+
+COPY files/ /
+
+RUN set -x \
+    && yum -y install wget \
+    && yum -y install ImageMagick \
+    # Necesarios para wkhtmltopdf
+    && yum -y install poppler-utils \
+    && yum -y install openssl \
+    && yum -y install xorg-x11-fonts-75dpi \
+    && yum -y install xorg-x11-fonts-Type1 \
+    # Caracteres japoneses para wkhtml
+    &&  yum -y install wqy-microhei-fonts \
+    && fc-cache -f -v \
+    \
+    && cd /opt \
+    &&  wget https://files.phpmyadmin.net/phpMyAdmin/4.8.2/phpMyAdmin-4.8.2-all-languages.tar.gz \
+    && tar xzvf phpMyAdmin-4.8.2-all-languages.tar.gz \
+    && rm phpMyAdmin-4.8.2-all-languages.tar.gz \
+    && cp -r phpMyAdmin-4.8.2-all-languages/. phpMyAdmin \
+    && rm -R phpMyAdmin-4.8.2-all-languages \
+    \
+    && cd /tmp \
+    && wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.centos7.x86_64.rpm \
+    && rpm -i wkhtmltox-0.12.5-1.centos7.x86_64.rpm \
+    && rm wkhtmltox-0.12.5-1.centos7.x86_64.rpm \
+    && yum -y remove wget 
+
