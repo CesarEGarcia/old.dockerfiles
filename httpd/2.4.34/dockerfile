@@ -63,7 +63,8 @@ RUN set -x \
 	&& yum -y remove gcc \
 	&& yum -y remove openssl-devel \
 	&& yum -y remove make \
-	&& yum -y remove wget 
+	&& yum -y remove wget \
+    && yum clean all
 
 COPY httpd.conf \
 	directory.conf \

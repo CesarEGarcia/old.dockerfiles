@@ -1,4 +1,4 @@
-FROM apache:2.4.34
+FROM existodw/apache:2.4.34
 
 COPY files/ /
 
@@ -99,4 +99,7 @@ RUN set -x \
     && yum -y remove gcc-c++ \
     && yum -y remove make \
     && yum -y remove autoconf \
-    && yum -y remove wget 
+    && yum -y remove wget \
+    && yum clean all 
+
+
