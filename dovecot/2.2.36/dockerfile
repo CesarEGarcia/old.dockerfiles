@@ -1,6 +1,7 @@
 FROM centos:7
 
 LABEL VERSION 2.2.36
+LABEL PIGEONHOLE 0.4.24
 
 RUN set -x \
     && groupadd dovecot \
@@ -34,32 +35,36 @@ RUN set -x \
     && make install \
     \
     && cd .. \
+    && wget https://pigeonhole.dovecot.org/releases/2.2/dovecot-2.2-pigeonhole-0.4.24.tar.gz \
+    && tar xzvf dovecot-2.2-pigeonhole-0.4.24.tar.gz \
+    && rm dovecot-2.2-pigeonhole-0.4.24.tar.gz \
+    && cd dovecot-2.2-pigeonhole-0.4.24 \
+    && ./configure \
+        --prefix=/opt/dovecot-pigeonhole \
+        --with-dovecot=../dovecot-2.2.36 \
+    && make \
+    && make install \
+    \
+    && cd .. \
     && rm -Rf /usr/local/src/dovecot-2.2.36 \
+    && rm -Rf /usr/local/src/dovecot-2.2-pigeonhole-0.4.24 \
+    \
+    && ln -s /opt/dovecot/bin/doveadm /usr/bin \
+    && ln -s /opt/dovecot/bin/doveconf /usr/bin \
     \
     && yum -y remove gcc \
     && yum -y remove make \
     && yum -y remove wget \
-    && yum clean all
+    && yum clean all \
+    && rm -Rf /var/cache/yum 
 
-RUN yum -y install net-tools
-
-COPY etc/ /opt/dovecot/etc/dovecot
-COPY supervisord.conf /etc/supervisord.conf
-#COPY existo.es /opt/usuarios/passwords/
-
-
-RUN ln -s /opt/dovecot/bin/doveadm /usr/bin
-RUN ln -s /opt/dovecot/bin/doveconf /usr/bin
-
-
-#RUN mkdir /var/log/dovecot
+COPY files/ /
 
 # Expose 24
-# Expose 143
-# Expose 110
+Expose 143
+Expose 110
 # Expose 993
 # Expose 995
 
 #CMD ["/usr/sbin/init"]    
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
-

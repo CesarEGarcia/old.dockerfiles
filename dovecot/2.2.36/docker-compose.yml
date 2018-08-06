@@ -8,6 +8,7 @@ services:
     volumes:
       - /opt/usuarios:/opt/usuarios
       - /var/log/dovecot:/var/log/dovecot
+      - /home/dominio:/home/dominios
     ports:
      - 110:110
      - 143:143
