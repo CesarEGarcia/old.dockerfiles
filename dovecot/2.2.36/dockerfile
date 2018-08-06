@@ -34,22 +34,25 @@ RUN set -x \
     && make install \
     \
     && cd .. \
-#    && rm -Rf /usr/local/src/dovecot-2.2.36 \
+    && rm -Rf /usr/local/src/dovecot-2.2.36 \
     \
     && yum -y remove gcc \
     && yum -y remove make \
     && yum -y remove wget \
     && yum clean all
 
-COPY etc/ /opt/dovecot/etc
-COPY supervisord.conf /etc/supervisord.conf
-
 RUN yum -y install net-tools
 
+COPY etc/ /opt/dovecot/etc/dovecot
+COPY supervisord.conf /etc/supervisord.conf
+#COPY existo.es /opt/usuarios/passwords/
+
+
 RUN ln -s /opt/dovecot/bin/doveadm /usr/bin
+RUN ln -s /opt/dovecot/bin/doveconf /usr/bin
 
 
-RUN mkdir /var/log/dovecot
+#RUN mkdir /var/log/dovecot
 
 # Expose 24
 # Expose 143

@@ -2,6 +2,9 @@
     disable_plaintext_auth = no
     auth_mechanisms = plain login
 
+    Commentar !include auth-system.conf.ext
+    Descomentar !include auth-passwdfile.conf.ext
+
 
 10-ssl.conf
     Comentar las líneas
