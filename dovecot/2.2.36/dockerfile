@@ -1,6 +1,6 @@
 FROM centos:7
 
-LABEL VERSION 2.3.2.1
+LABEL VERSION 2.2.36
 
 RUN set -x \
     && groupadd dovecot \
@@ -15,10 +15,10 @@ RUN set -x \
     && yum -y install supervisor \
     \
     && cd /usr/local/src \
-    && wget https://www.dovecot.org/releases/2.3/dovecot-2.3.2.1.tar.gz \
-    && tar xzvf dovecot-2.3.2.1.tar.gz \
-    && rm dovecot-2.3.2.1.tar.gz \
-    && cd dovecot-2.3.2.1 \
+    && wget https://www.dovecot.org/releases/2.2/dovecot-2.2.36.tar.gz \
+    && tar xzvf dovecot-2.2.36.tar.gz \
+    && rm dovecot-2.2.36.tar.gz \
+    && cd dovecot-2.2.36 \
     && ./configure \
         --prefix=/opt/dovecot \
         --without-shadow \
@@ -29,9 +29,12 @@ RUN set -x \
         --without-pgsql \
         --without-sqlite \
     \
-    && cd /usr/local/src/dovecot-2.3.2.1 \
+    && cd /usr/local/src/dovecot-2.2.36 \
     && make \
     && make install \
+    \
+    && cd .. \
+#    && rm -Rf /usr/local/src/dovecot-2.2.36 \
     \
     && yum -y remove gcc \
     && yum -y remove make \
@@ -45,7 +48,6 @@ RUN yum -y install net-tools
 
 RUN ln -s /opt/dovecot/bin/doveadm /usr/bin
 
-RUN rm -Rf /usr/local/src/dovecot-2.3.2.1
 
 RUN mkdir /var/log/dovecot
 
