@@ -1,6 +1,6 @@
-VERSION = 7.1.3
+VERSION = 7.1.4
 
-build: 
+build:
 	docker image build -t existo-dev:$(VERSION) .
 
 # latest:

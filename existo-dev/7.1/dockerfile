@@ -35,7 +35,8 @@ RUN set -x \
     \
     && mkdir /tmp/pdfs \
     && mkdir /tmp/uploads \
-    && chown apache.apache /tmp/pdfs /tmp/uploads 
+    && touch /var/log/email.log \
+    && chown apache.apache /tmp/pdfs /tmp/uploads /var/log/email.log
 
- 
+
 
