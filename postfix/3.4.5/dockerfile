@@ -7,16 +7,19 @@ ENV VERSION 3.4.5
 RUN set -x \
     && groupadd -g 89 postfix \
     && groupadd -g 90 postdrop \
-    && useradd -u 89 -g postfix -d /opt/postfix -s /sbin/nologin -M postfix
-
-RUN set -x \
+    && useradd -u 89 -g postfix -d /opt/postfix -s /sbin/nologin -M postfix \
+    \
 	&& yum -y install gcc \
 	&& yum -y install make \
+	&& yum -y install m4 \
     && yum -y install wget \
+    && yum -y install rsyslog \
     && yum -y install libdb-devel \
-    && yum -y install pcre-devel
-
-RUN set -x \
+    && yum -y install pcre-devel \
+    && yum -y install openssl-devel \
+    && yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
+    && yum -y install supervisor \
+    \
     && cd /usr/local/src \
     && wget http://ftp.uma.es/mirror/postfix/src/official/postfix-3.4.5.tar.gz \
     && tar xzvf postfix-${VERSION}.tar.gz \
@@ -42,6 +45,11 @@ RUN set -x \
 RUN set -x \
     && cd /usr/local/src/postfix-${VERSION} \
     && make
+
+RUN set -x \
+    && cd /usr/local/src/postfix-${VERSION} \
+    && make install -non-interactive \
+    && /bin/sh postfix-install -non-interactive
 
 
 # RUN set -x \
@@ -82,6 +90,8 @@ RUN set -x \
     # && yum -y remove gcc \
     # && yum -y remove make \
     # && yum -y remove wget \
+        # && rm -rf /var/cache/yum/* \
+
     # && yum clean all
 
 # COPY etc/ /opt/dovecot/etc
