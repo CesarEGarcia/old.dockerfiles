@@ -1,8 +1,8 @@
-FROM existodw/php:7.1.19
+FROM existo/php:7.1.23
 
 LABEL VERSION existo-dev:7.1.0
 LABEL HTTPD 3.4.34
-LABEL PHP 7.1.19
+LABEL PHP 7.1.23
 LABEL PHPMYADMIN 4.8.2
 
 COPY files/ /
