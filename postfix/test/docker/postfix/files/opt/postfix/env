@@ -1,0 +1,9 @@
+#!/bin/bash
+
+/opt/postfix/bin/postconf "multi_instance_name = ${MULTI_INSTANCE_NAME}"
+/opt/postfix/bin/postconf "myhostname          = ${MY_HOSTNAME}"
+/opt/postfix/bin/postconf "mynetworks          = ${MY_NETWORKS}"
+/opt/postfix/bin/postconf "smtp_bind_address   = ${SMTP_BIND_ADDRESS}"
+
+
+exit 0

@@ -1,0 +1,57 @@
+
+Jun 24 18:50:15 028ae23f8ec0 postfix/postfix-script[67]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:50:15 028ae23f8ec0 postfix/postfix-script[68]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:50:15 028ae23f8ec0 postfix/postfix-script[78]: starting the Postfix mail system
+Jun 24 18:50:16 028ae23f8ec0 postfix/master[80]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:51:30 df20d00b88db postfix/postfix-script[68]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:51:30 df20d00b88db postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:51:30 df20d00b88db postfix/postfix-script[79]: starting the Postfix mail system
+Jun 24 18:51:30 df20d00b88db postfix/master[81]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:52:56 7d6dcc3a430e postfix/postfix-script[73]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:52:56 7d6dcc3a430e postfix/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:52:56 7d6dcc3a430e postfix/postfix-script[84]: starting the Postfix mail system
+Jun 24 18:52:56 7d6dcc3a430e MX/master[86]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:54:30 ba8602f1ddb6 postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:54:30 ba8602f1ddb6 postfix/postfix-script[70]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:54:30 ba8602f1ddb6 postfix/postfix-script[80]: starting the Postfix mail system
+Jun 24 18:54:30 ba8602f1ddb6 postfix/master[82]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:55:06 66e2dea64ee9 postfix/postfix-script[68]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:55:06 66e2dea64ee9 postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:55:06 66e2dea64ee9 postfix/postfix-script[79]: starting the Postfix mail system
+Jun 24 18:55:06 66e2dea64ee9 postfix/master[81]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:56:18 5a376e84ae19 postfix/postfix-script[72]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:56:18 5a376e84ae19 postfix/postfix-script[73]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:56:20 5a376e84ae19 postfix/postfix-script[85]: starting the Postfix mail system
+Jun 24 18:56:20 5a376e84ae19 MX/master[87]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:57:49 ca5144269bfa postfix/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:57:49 ca5144269bfa postfix/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:57:49 ca5144269bfa postfix/postfix-script[85]: starting the Postfix mail system
+Jun 24 18:57:49 ca5144269bfa MX/master[87]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:58:21 bd8813c1ab63 postfix/postfix-script[68]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:58:21 bd8813c1ab63 postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:58:21 bd8813c1ab63 postfix/postfix-script[79]: starting the Postfix mail system
+Jun 24 18:58:21 bd8813c1ab63 postfix/master[81]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 18:59:13 fd5ccb40add8 postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 18:59:13 fd5ccb40add8 postfix/postfix-script[70]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 18:59:13 fd5ccb40add8 postfix/postfix-script[80]: starting the Postfix mail system
+Jun 24 18:59:13 fd5ccb40add8 MX/master[82]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 19:03:50 59ba9759aa9f postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 19:03:50 59ba9759aa9f postfix/postfix-script[70]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 19:03:50 59ba9759aa9f postfix/postfix-script[80]: starting the Postfix mail system
+Jun 24 19:03:50 59ba9759aa9f MX/master[82]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 19:05:27 d3284542ddd2 NAME/postfix-script[70]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 19:05:27 d3284542ddd2 NAME/postfix-script[71]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 19:05:27 d3284542ddd2 NAME/postfix-script[81]: starting the Postfix mail system
+Jun 24 19:05:27 d3284542ddd2 MX/master[83]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 19:06:45 304d59769a32 postfix/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 19:06:45 304d59769a32 postfix/postfix-script[70]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 19:06:45 304d59769a32 postfix/postfix-script[80]: starting the Postfix mail system
+Jun 24 19:06:45 304d59769a32 MX/master[82]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 19:20:41 9481010a52cb NAME/postfix-script[68]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 19:20:41 9481010a52cb NAME/postfix-script[69]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 19:20:41 9481010a52cb NAME/postfix-script[79]: starting the Postfix mail system
+Jun 24 19:20:41 9481010a52cb NAME/master[81]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 24 19:22:21 b75a90c24b67 NAME/postfix-script[73]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 24 19:22:21 b75a90c24b67 NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 24 19:22:21 b75a90c24b67 NAME/postfix-script[84]: starting the Postfix mail system
+Jun 24 19:22:21 b75a90c24b67 MX/master[86]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
