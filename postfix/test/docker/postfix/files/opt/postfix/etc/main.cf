@@ -43,7 +43,7 @@ message_size_limit    = 51200000
 
 # Usuarios y dominios
 alias_maps              = hash:/etc/aliases
-virtual_mailbox_domains = hash:/opt/usuarios/domains
+virtual_mailbox_domains = VIRTUAL_DOMAINS
 virtual_mailbox_base    = /home/dominios
 virtual_mailbox_maps    = hash:/opt/usuarios/users
 virtual_minimum_uid     = 700

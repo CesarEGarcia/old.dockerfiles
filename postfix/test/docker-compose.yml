@@ -14,6 +14,7 @@ services:
 
 
     volumes:
+      - ./etc:/opt/postfix/conf
       - ./log:/var/log/host
       - ./spool:/opt/postfix/spool
       - ./data:/opt/postfix/data
@@ -22,13 +23,23 @@ services:
     #   - MULTI_INSTANCE_NAME="MX"
 
     environment:
-      MULTI_INSTANCE_NAME:  MX
-      MY_HOSTNAME:          mx3.ametel.es
-      MY_NETWORKS:          127.0.0.1
-      SMTP_BIND_ADDRESS:    51.91.13.123
+      MULTI_INSTANCE_NAME:      MX
+      MY_HOSTNAME:              mx3.ametel.es
+      MY_NETWORKS:              127.0.0.1
+      SMTP_BIND_ADDRESS:        51.91.13.123
+      VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
 
     networks:
       - localNetwork
 
+  postmap:
+    build:
+      context: docker/postmap
+
+    volumes:
+      - ./etc:/opt/postfix/conf
+
+
 networks:
   localNetwork:
+
