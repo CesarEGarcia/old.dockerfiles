@@ -1,5 +1,0 @@
-FROM postfix:3.4.5
-
-WORKDIR /opt/postfix/conf
-ENTRYPOINT ["/opt/postfix/bin/postmap"]
-

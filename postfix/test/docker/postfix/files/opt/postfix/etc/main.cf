@@ -44,18 +44,18 @@ message_size_limit    = 51200000
 # Usuarios y dominios
 alias_maps              = hash:/etc/aliases
 virtual_mailbox_domains = VIRTUAL_DOMAINS
-virtual_mailbox_base    = /home/dominios
-virtual_mailbox_maps    = hash:/opt/usuarios/users
+virtual_mailbox_base    = VIRTUAL_MAILBOX_BASE
+virtual_mailbox_maps    = VIRTUAL_MAILBOX_MAPS
 virtual_minimum_uid     = 700
 virtual_uid_maps        = static:700
 virtual_gid_maps        = static:700
-virtual_alias_maps      = hash:/opt/usuarios/alias
+virtual_alias_maps      = VIRTUAL_ALIAS_MAPS
 
 # virtual_transport = lmtp:unix:private/dovecot-lmtp
 
 
 # Copias de mensajes
-recipient_bcc_maps      = regexp:/opt/usuarios/bcc_recibidos
+#recipient_bcc_maps      = regexp:/opt/usuarios/bcc_recibidos
 #sender_bcc_maps         = regexp:/opt/usuarios/bcc_enviados
 
 # Autorespondedor
@@ -97,30 +97,7 @@ smtpd_client_connection_count_limit = 10
 ##email_out = check_recipient_access hash:/opt/usuarios/bloqueos, reject
 ##email_in  = check_sender_access    hash:/opt/usuarios/bloqueos, reject
 
-header_checks = regexp:/opt/usuarios/headers.MX
-
-smtpd_recipient_restrictions =
-        permit_mynetworks
-        reject_unauth_destination
-        check_client_access hash:/opt/usuarios/client_access
-        check_helo_access pcre:/opt/usuarios/helo_access.pcre
-        reject_non_fqdn_helo_hostname
-        reject_invalid_helo_hostname
-        reject_non_fqdn_sender
-        reject_unknown_sender_domain
-        reject_unauth_pipelining
-        reject_non_fqdn_recipient
-        reject_unknown_recipient_domain
-        reject_unlisted_recipient
-#       reject_unknown_client_hostname
-        check_recipient_access hash:/opt/usuarios/bloquear_destinos
-        check_sender_access hash:/opt/usuarios/nogreylist
-#       check_client_access pcre:/opt/usuarios/filter_default
-        reject_rbl_client bl.spamcop.net
-        reject_rbl_client zen.spamhaus.org
-        reject_rhsbl_sender dbl.spamhaus.org
-##        check_policy_service unix:private/postgrey
-        permit
+# header_checks = regexp:/opt/usuarios/headers.MX
 
 #   check_policy_service unix:private/policyd-spf
 
