@@ -16,8 +16,8 @@ html_directory    = no
 readme_directory  = no
 shlib_directory   = no
 
-mail_owner   = postfix
-setgid_group = postdrop
+mail_owner   = root
+setgid_group = root
 
 
 myhostname    = MY_HOSTNAME
