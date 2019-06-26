@@ -46,9 +46,9 @@ alias_maps              = hash:/etc/aliases
 virtual_mailbox_domains = VIRTUAL_DOMAINS
 virtual_mailbox_base    = VIRTUAL_MAILBOX_BASE
 virtual_mailbox_maps    = VIRTUAL_MAILBOX_MAPS
-# virtual_minimum_uid     = 700
-# virtual_uid_maps        = static:700
-# virtual_gid_maps        = static:700
+virtual_minimum_uid     = 700
+virtual_uid_maps        = static:700
+virtual_gid_maps        = static:700
 virtual_alias_maps      = VIRTUAL_ALIAS_MAPS
 
 # virtual_transport = lmtp:unix:private/dovecot-lmtp

@@ -2,6 +2,9 @@ FROM postfix:3.4.5
 
 RUN /opt/postfix/bin/newaliases
 
+RUN groupadd -g 700 vmail
+RUN useradd -d /home/dominios -s /sbin/nologin -g vmail -M -u 700 vmail
+
 RUN set -x \
 	&& yum install -y net-tools \
 	&& yum install -y telnet \
