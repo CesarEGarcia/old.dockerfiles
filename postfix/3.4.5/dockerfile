@@ -8,6 +8,8 @@ RUN set -x \
     && groupadd -g 89 postfix \
     && groupadd -g 90 postdrop \
     && useradd -u 89 -g postfix -d /opt/postfix -s /sbin/nologin -M postfix \
+    && groupadd -g 700 vmail \
+    && useradd -d /home/dominios -s /sbin/nologin -g vmail -M -u 700 vmail \
     \
 	&& yum -y install gcc \
 	&& yum -y install make \
@@ -44,6 +46,7 @@ RUN set -x \
     && make install -non-interactive \
     && /bin/sh postfix-install -non-interactive \
     \
+    && /opt/postfix/bin/newaliases \
     && echo PATH=/opt/postfix/bin/:$PATH > /etc/profile.d/path.sh \
     \
     && yum -y remove gcc \

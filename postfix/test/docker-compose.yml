@@ -12,16 +12,12 @@ services:
         protocol: tcp
         mode: host
 
-
     volumes:
+      - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./dominios:/home/dominios
       - ./logs:/var/log/host
       - ./spool:/opt/postfix/spool
       - ./data:/opt/postfix/data
-
-    # environment:
-    #   - MULTI_INSTANCE_NAME="MX"
 
     environment:
       MULTI_INSTANCE_NAME:      MX
