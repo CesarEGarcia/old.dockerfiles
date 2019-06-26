@@ -16,7 +16,7 @@ services:
     volumes:
       - ./etc:/opt/postfix/conf
       - ./dominios:/home/dominios
-      - ./log:/var/log/host
+      - ./logs:/var/log/host
       - ./spool:/opt/postfix/spool
       - ./data:/opt/postfix/data
 
