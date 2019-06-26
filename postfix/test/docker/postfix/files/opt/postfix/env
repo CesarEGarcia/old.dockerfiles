@@ -14,6 +14,7 @@ echo $'\n\nsmtpd_recipient_restrictions =' >> /opt/postfix/etc/main.cf
 echo "     $SMTPD_RECIPIENT_RESTRICTIONS" | awk -F',' '{$1=$1}1' OFS='\n    ' >> /opt/postfix/etc/main.cf
 echo $'\n\n' >> /opt/postfix/etc/main.cf
 
+mkdir /opt/postfix/data
 chmod vmail.vmail /opt/postfix/data
 
 exit 0
