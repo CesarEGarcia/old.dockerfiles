@@ -49,7 +49,7 @@ services:
         reject_unlisted_recipient,
         #       reject_unknown_client_hostname,
         check_recipient_access hash:/opt/postfix/conf/bloquear_destinos,
-        check_sender_access hash:/opt/postfix/conf/nogreylist,
+        # check_sender_access hash:/opt/postfix/conf/nogreylist,
         #       check_client_access pcre:/opt/postfix/conf/filter_default,
         reject_rbl_client bl.spamcop.net,
         reject_rbl_client zen.spamhaus.org,
