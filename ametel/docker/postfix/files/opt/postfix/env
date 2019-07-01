@@ -1,0 +1,21 @@
+#!/bin/bash
+
+/opt/postfix/bin/postconf "multi_instance_name          = ${MULTI_INSTANCE_NAME}"
+/opt/postfix/bin/postconf "myhostname                   = ${MY_HOSTNAME}"
+/opt/postfix/bin/postconf "mynetworks                   = ${MY_NETWORKS}"
+/opt/postfix/bin/postconf "smtp_bind_address            = ${SMTP_BIND_ADDRESS}"
+/opt/postfix/bin/postconf "virtual_mailbox_domains      = ${VIRTUAL_MAILBOX_DOMAINS}"
+/opt/postfix/bin/postconf "virtual_mailbox_base         = ${VIRTUAL_MAILBOX_BASE}"
+/opt/postfix/bin/postconf "virtual_mailbox_maps         = ${VIRTUAL_MAILBOX_MAPS}"
+/opt/postfix/bin/postconf "virtual_alias_maps           = ${VIRTUAL_ALIAS_MAPS}"
+
+# postconf no admite multilineas
+echo $'\n\nsmtpd_recipient_restrictions =' >> /opt/postfix/etc/main.cf
+echo "     $SMTPD_RECIPIENT_RESTRICTIONS" | awk -F',' '{$1=$1}1' OFS='\n    ' >> /opt/postfix/etc/main.cf
+echo $'\n\n' >> /opt/postfix/etc/main.cf
+
+mkdir /opt/postfix/data
+chown postfix.postfix /opt/postfix/data
+chown vmail.vmail /home/dominios
+
+exit 0

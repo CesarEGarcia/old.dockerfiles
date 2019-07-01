@@ -1,0 +1,121 @@
+Jun 25 14:57:46 c0387f858691 NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 14:57:46 c0387f858691 NAME/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 14:57:46 c0387f858691 NAME/postfix-script[85]: starting the Postfix mail system
+Jun 25 14:57:46 c0387f858691 MX/master[87]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 15:01:50 c0387f858691 MX/postmap[105]: fatal: usage: postmap [-bfFhimnNoprsuUvw] [-c config_dir] [-d key] [-q key] [map_type:]file...
+Jun 25 15:13:18 7822e362c1d7 NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 15:13:18 7822e362c1d7 NAME/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 15:13:18 7822e362c1d7 NAME/postfix-script[85]: starting the Postfix mail system
+Jun 25 15:13:18 7822e362c1d7 MX/master[87]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 15:21:58 7822e362c1d7 MX/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 15:21:58 7822e362c1d7 MX/postfix-script[76]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 15:21:58 7822e362c1d7 MX/postfix-script[86]: starting the Postfix mail system
+Jun 25 15:21:58 7822e362c1d7 MX/master[88]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 15:24:20 0c80c4f3c93b NAME/postfix-script[73]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 15:24:20 0c80c4f3c93b NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 15:24:20 0c80c4f3c93b NAME/postfix-script[84]: starting the Postfix mail system
+Jun 25 15:24:20 0c80c4f3c93b MX/master[86]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 15:25:15 f05204b8d9e6 NAME/postfix-script[73]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 15:25:15 f05204b8d9e6 NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 15:25:15 f05204b8d9e6 NAME/postfix-script[84]: starting the Postfix mail system
+Jun 25 15:25:15 f05204b8d9e6 MX/master[86]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 15:39:49 2054ab59a604 NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 15:39:49 2054ab59a604 NAME/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 15:39:49 2054ab59a604 NAME/postfix-script[85]: starting the Postfix mail system
+Jun 25 15:39:49 2054ab59a604 MX/master[87]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 15:51:13 97d9972e0fd6 NAME/postfix-script[74]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 15:51:13 97d9972e0fd6 NAME/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 15:51:13 97d9972e0fd6 NAME/postfix-script[85]: starting the Postfix mail system
+Jun 25 15:51:13 97d9972e0fd6 MX/master[87]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 16:18:02 9481aed20538 NAME/postfix-script[75]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 16:18:02 9481aed20538 NAME/postfix-script[76]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 16:18:02 9481aed20538 NAME/postfix-script[86]: starting the Postfix mail system
+Jun 25 16:18:02 9481aed20538 MX/master[88]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 16:29:14 32d48c1f7fab NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 16:29:14 32d48c1f7fab NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 16:29:14 32d48c1f7fab NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 16:29:14 32d48c1f7fab MX/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 16:41:18 bf30a8f060bf NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 16:41:18 bf30a8f060bf NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 16:41:18 bf30a8f060bf NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 16:41:18 bf30a8f060bf MX/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 16:59:00 370cb5417a53 NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 16:59:00 370cb5417a53 NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 16:59:00 370cb5417a53 NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 16:59:00 370cb5417a53 postfix/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:01:38 a518ab4f919c NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:01:38 a518ab4f919c NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:01:38 a518ab4f919c NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 17:01:38 a518ab4f919c MX/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:06:45 37625d595cd1 NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:06:45 37625d595cd1 NAME/postfix-script[80]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:06:45 37625d595cd1 NAME/postfix-script[90]: starting the Postfix mail system
+Jun 25 17:06:45 37625d595cd1 MX/master[92]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:12:42 18ef52f410f2 NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:12:42 18ef52f410f2 NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:12:42 18ef52f410f2 NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 17:12:42 18ef52f410f2 MX/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:14:24 4636c831f66e NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:14:24 4636c831f66e NAME/postfix-script[80]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:14:24 4636c831f66e NAME/postfix-script[90]: starting the Postfix mail system
+Jun 25 17:14:24 4636c831f66e MX/master[92]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:18:42 c797e084aa87 NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:18:42 c797e084aa87 NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:18:42 c797e084aa87 NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 17:18:42 c797e084aa87 MX/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:26:21 ff794f66bd21 NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:26:21 ff794f66bd21 NAME/postfix-script[80]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:26:21 ff794f66bd21 NAME/postfix-script[90]: starting the Postfix mail system
+Jun 25 17:26:21 ff794f66bd21 MX/master[92]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:29:29 0549d09a8337 NAME/postfix-script[77]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:29:29 0549d09a8337 NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:29:29 0549d09a8337 NAME/postfix-script[88]: starting the Postfix mail system
+Jun 25 17:29:29 0549d09a8337 MX/master[90]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:52:31 ae0836881743 NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:52:31 ae0836881743 NAME/postfix-script[79]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:52:31 ae0836881743 NAME/postfix-script[89]: starting the Postfix mail system
+Jun 25 17:52:31 ae0836881743 MX/master[91]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:57:29 261dff299459 NAME/master[27]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 NAME/postsuper[62]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 NAME/postlog[77]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 NAME/postfix-script[77]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:57:29 261dff299459 NAME/postlog[78]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 NAME/postfix-script[78]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:57:29 261dff299459 NAME/postlog[88]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 NAME/postfix-script[88]: starting the Postfix mail system
+Jun 25 17:57:29 261dff299459 NAME/master[90]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 MX/master[90]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:57:29 261dff299459 MX/qmgr[92]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:57:29 261dff299459 MX/pickup[91]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 NAME/master[28]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 NAME/postsuper[63]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 NAME/postlog[84]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 NAME/postfix-script[84]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 17:59:50 b24afbb3db74 NAME/postlog[85]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 NAME/postfix-script[85]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 17:59:50 b24afbb3db74 NAME/postlog[103]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 NAME/postfix-script[103]: starting the Postfix mail system
+Jun 25 17:59:50 b24afbb3db74 NAME/master[105]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:50 b24afbb3db74 MX/master[105]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
+Jun 25 17:59:51 b24afbb3db74 MX/qmgr[107]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 17:59:51 b24afbb3db74 MX/pickup[106]: warning: /opt/postfix/etc/main.cf, line 131: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:31:25 13df7bf9f2e4 NAME/master[29]: fatal: /opt/postfix/etc/main.cf, line 131: missing '=' after attribute name: "permit_mynetworks reject_unauth_destination check_client_access hash:/opt/postfix/conf/check_client_access check_helo_access pcre:/opt/usuarios/helo_access.pcre reject_non_fqdn_helo_hostname reject_invalid_helo_hostname reject_non_fqdn_sender reject_unknown_sender_domain reject_unauth_pipelining reject_non_fqdn_recipient reject_unknown_recipient_domain reject_unlisted_recipient check_recipient_access hash:/opt/usuarios/bloquear_destinos check_sender_access hash:/opt/usuarios/nogreylist reject_rbl_client bl.spamcop.net reject_rbl_client zen.spamhaus.org reject_rhsbl_sender dbl.spamhaus.org permit"
+Jun 25 18:31:26 13df7bf9f2e4 NAME/postlog[30]: fatal: /opt/postfix/etc/main.cf, line 131: missing '=' after attribute name: "permit_mynetworks reject_unauth_destination check_client_access hash:/opt/postfix/conf/check_client_access check_helo_access pcre:/opt/usuarios/helo_access.pcre reject_non_fqdn_helo_hostname reject_invalid_helo_hostname reject_non_fqdn_sender reject_unknown_sender_domain reject_unauth_pipelining reject_non_fqdn_recipient reject_unknown_recipient_domain reject_unlisted_recipient check_recipient_access hash:/opt/usuarios/bloquear_destinos check_sender_access hash:/opt/usuarios/nogreylist reject_rbl_client bl.spamcop.net reject_rbl_client zen.spamhaus.org reject_rhsbl_sender dbl.spamhaus.org permit"
+Jun 25 18:33:59 b9aaf29bf3e6 NAME/master[29]: fatal: /opt/postfix/etc/main.cf, line 132: missing '=' after attribute name: "permit_mynetworks reject_unauth_destination check_client_access hash:/opt/postfix/conf/check_client_access check_helo_access pcre:/opt/usuarios/helo_access.pcre reject_non_fqdn_helo_hostname reject_invalid_helo_hostname reject_non_fqdn_sender reject_unknown_sender_domain reject_unauth_pipelining reject_non_fqdn_recipient reject_unknown_recipient_domain reject_unlisted_recipient check_recipient_access hash:/opt/usuarios/bloquear_destinos check_sender_access hash:/opt/usuarios/nogreylist reject_rbl_client bl.spamcop.net reject_rbl_client zen.spamhaus.org reject_rhsbl_sender dbl.spamhaus.org permit"
+Jun 25 18:34:00 b9aaf29bf3e6 NAME/postlog[30]: fatal: /opt/postfix/etc/main.cf, line 132: missing '=' after attribute name: "permit_mynetworks reject_unauth_destination check_client_access hash:/opt/postfix/conf/check_client_access check_helo_access pcre:/opt/usuarios/helo_access.pcre reject_non_fqdn_helo_hostname reject_invalid_helo_hostname reject_non_fqdn_sender reject_unknown_sender_domain reject_unauth_pipelining reject_non_fqdn_recipient reject_unknown_recipient_domain reject_unlisted_recipient check_recipient_access hash:/opt/usuarios/bloquear_destinos check_sender_access hash:/opt/usuarios/nogreylist reject_rbl_client bl.spamcop.net reject_rbl_client zen.spamhaus.org reject_rhsbl_sender dbl.spamhaus.org permit"
+Jun 25 18:36:48 26d01741bf90 NAME/master[29]: warning: /opt/postfix/etc/main.cf, line 133: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:36:48 26d01741bf90 NAME/master[29]: fatal: /opt/postfix/etc/main.cf, line 135: missing '=' after attribute name: "permit_mynetworks reject_unauth_destination check_client_access hash:/opt/postfix/conf/check_client_access check_helo_access pcre:/opt/usuarios/helo_access.pcre reject_non_fqdn_helo_hostname reject_invalid_helo_hostname reject_non_fqdn_sender reject_unknown_sender_domain reject_unauth_pipelining reject_non_fqdn_recipient reject_unknown_recipient_domain reject_unlisted_recipient check_recipient_access hash:/opt/usuarios/bloquear_destinos check_sender_access hash:/opt/usuarios/nogreylist reject_rbl_client bl.spamcop.net reject_rbl_client zen.spamhaus.org reject_rhsbl_sender dbl.spamhaus.org permit"
+Jun 25 18:36:49 26d01741bf90 NAME/postlog[30]: warning: /opt/postfix/etc/main.cf, line 133: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:36:49 26d01741bf90 NAME/postlog[30]: fatal: /opt/postfix/etc/main.cf, line 135: missing '=' after attribute name: "permit_mynetworks reject_unauth_destination check_client_access hash:/opt/postfix/conf/check_client_access check_helo_access pcre:/opt/usuarios/helo_access.pcre reject_non_fqdn_helo_hostname reject_invalid_helo_hostname reject_non_fqdn_sender reject_unknown_sender_domain reject_unauth_pipelining reject_non_fqdn_recipient reject_unknown_recipient_domain reject_unlisted_recipient check_recipient_access hash:/opt/usuarios/bloquear_destinos check_sender_access hash:/opt/usuarios/nogreylist reject_rbl_client bl.spamcop.net reject_rbl_client zen.spamhaus.org reject_rhsbl_sender dbl.spamhaus.org permit"
+Jun 25 18:37:50 d5f69e3c5f3f NAME/master[29]: warning: /opt/postfix/etc/main.cf, line 133: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:37:50 d5f69e3c5f3f NAME/master[29]: fatal: /opt/postfix/etc/main.cf, line 134: missing '=' after attribute name: "permit_mynetworks     reject_unauth_destination     check_client_access hash:/opt/postfix/conf/check_client_access     check_helo_access pcre:/opt/usuarios/helo_access.pcre     reject_non_fqdn_helo_hostname     reject_invalid_helo_hostname     reject_non_fqdn_sender     reject_unknown_sender_domain     reject_unauth_pipelining     reject_non_fqdn_recipient     reject_unknown_recipient_domain     reject_unlisted_recipient     check_recipient_access hash:/opt/usuarios/bloquear_destinos     check_sender_access hash:/opt/usuarios/nogreylist     reject_rbl_client bl.spamcop.net     reject_rbl_client zen.spamhaus.org     reject_rhsbl_sender dbl.spamhaus.org     permit"
+Jun 25 18:37:51 d5f69e3c5f3f NAME/postlog[30]: warning: /opt/postfix/etc/main.cf, line 133: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:37:51 d5f69e3c5f3f NAME/postlog[30]: fatal: /opt/postfix/etc/main.cf, line 134: missing '=' after attribute name: "permit_mynetworks     reject_unauth_destination     check_client_access hash:/opt/postfix/conf/check_client_access     check_helo_access pcre:/opt/usuarios/helo_access.pcre     reject_non_fqdn_helo_hostname     reject_invalid_helo_hostname     reject_non_fqdn_sender     reject_unknown_sender_domain     reject_unauth_pipelining     reject_non_fqdn_recipient     reject_unknown_recipient_domain     reject_unlisted_recipient     check_recipient_access hash:/opt/usuarios/bloquear_destinos     check_sender_access hash:/opt/usuarios/nogreylist     reject_rbl_client bl.spamcop.net     reject_rbl_client zen.spamhaus.org     reject_rhsbl_sender dbl.spamhaus.org     permit"
+Jun 25 18:40:04 4b19eaf6eb4f NAME/master[28]: warning: /opt/postfix/etc/main.cf, line 133: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:40:04 4b19eaf6eb4f NAME/master[28]: fatal: /opt/postfix/etc/main.cf, line 134: missing '=' after attribute name: "1234permit_mynetworks     reject_unauth_destination     check_client_access hash:/opt/postfix/conf/check_client_access     check_helo_access pcre:/opt/usuarios/helo_access.pcre     reject_non_fqdn_helo_hostname     reject_invalid_helo_hostname     reject_non_fqdn_sender     reject_unknown_sender_domain     reject_unauth_pipelining     reject_non_fqdn_recipient     reject_unknown_recipient_domain     reject_unlisted_recipient     check_recipient_access hash:/opt/usuarios/bloquear_destinos     check_sender_access hash:/opt/usuarios/nogreylist     reject_rbl_client bl.spamcop.net     reject_rbl_client zen.spamhaus.org     reject_rhsbl_sender dbl.spamhaus.org     permit"
+Jun 25 18:40:05 4b19eaf6eb4f NAME/postlog[29]: warning: /opt/postfix/etc/main.cf, line 133: overriding earlier entry: smtpd_recipient_restrictions=SMTPD_RECIPIENT_RESTRICTIONS
+Jun 25 18:40:05 4b19eaf6eb4f NAME/postlog[29]: fatal: /opt/postfix/etc/main.cf, line 134: missing '=' after attribute name: "1234permit_mynetworks     reject_unauth_destination     check_client_access hash:/opt/postfix/conf/check_client_access     check_helo_access pcre:/opt/usuarios/helo_access.pcre     reject_non_fqdn_helo_hostname     reject_invalid_helo_hostname     reject_non_fqdn_sender     reject_unknown_sender_domain     reject_unauth_pipelining     reject_non_fqdn_recipient     reject_unknown_recipient_domain     reject_unlisted_recipient     check_recipient_access hash:/opt/usuarios/bloquear_destinos     check_sender_access hash:/opt/usuarios/nogreylist     reject_rbl_client bl.spamcop.net     reject_rbl_client zen.spamhaus.org     reject_rhsbl_sender dbl.spamhaus.org     permit"
+Jun 25 18:42:20 6a261dab636f NAME/postfix-script[80]: warning: not owned by postfix: /opt/postfix/data/.
+Jun 25 18:42:20 6a261dab636f NAME/postfix-script[81]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 25 18:42:20 6a261dab636f NAME/postfix-script[91]: starting the Postfix mail system
+Jun 25 18:42:20 6a261dab636f MX/master[93]: daemon started -- version 3.4.5, configuration /opt/postfix/etc

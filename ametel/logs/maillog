@@ -1,0 +1,3 @@
+Jun 26 16:34:59 b6243b7c54be NAME/postfix-script[82]: warning: not owned by postfix: /opt/postfix/data/./master.lock
+Jun 26 16:34:59 b6243b7c54be NAME/postfix-script[92]: starting the Postfix mail system
+Jun 26 16:34:59 b6243b7c54be MX/master[94]: daemon started -- version 3.4.5, configuration /opt/postfix/etc
