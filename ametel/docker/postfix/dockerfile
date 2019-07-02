@@ -1,4 +1,4 @@
-FROM postfix:3.4.5
+FROM existo/postfix:3.4.5
 
 
 RUN set -x \
