@@ -58,7 +58,7 @@ services:
       - localNetwork
 
   postmap:
-    image: postfix:3.4.5
+    image: existo/postfix:3.4.5
     working_dir: /opt/postfix/conf
     entrypoint: "/opt/postfix/bin/postmap"
     volumes:
