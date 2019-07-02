@@ -6,17 +6,15 @@ RUN set -x \
 	&& yum install -y telnet \
 	&& yum install -y less
 
-# RUN mkdir /opt/postfix/queue
-
 COPY files /
 
-RUN chmod 700 /opt/postfix/env
+RUN set -x \
+	&& cd /etc \
+	&& sed 's|^mail\.\*.*|mail\.\* /var/log/postfix/maillog|' -i rsyslog.conf \
+	&& mkdir /var/log/postfix \
+	&& chown postfix.postfix /var/log/postfix \
+	\
+	&& chmod 700 /opt/postfix/env
 
-# CMD ["/bin/bash", "echo hola"]
-# CMD echo "hola ${MULTI_INSTANCE_NAME}"
-#CMD ["/bin/bash", "-c", "hola2  ${MULTI_INSTANCE_NAME}"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
-# CMD ["/usr/sbin/init"]
-
-# CMD ["/opt/postfix/env"]
