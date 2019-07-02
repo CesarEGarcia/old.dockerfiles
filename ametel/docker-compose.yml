@@ -13,8 +13,7 @@ services:
         mode: host
 
     volumes:
-      # - /home/dominios:/home/dominios
-      - ./dominios:/home/dominios
+      - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
       - ./logs:/var/log/host
       - ./spool:/opt/postfix/spool
@@ -67,8 +66,8 @@ services:
 
   dovecot:
     environment:
-      IMAP_IP:  12.34.56.78
-      POP3_IP:  21.43.65.87
+      IMAP_IP:  51.91.13.123
+      POP3_IP:  51.91.13.123
 
     build:
       context: docker/dovecot
