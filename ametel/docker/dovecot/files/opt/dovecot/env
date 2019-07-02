@@ -15,6 +15,13 @@ sed 's|#info_log_path =.*|info_log_path = /var/log/dovecot/dovecot-info.log|' -i
 sed 's/#auth_verbose = no/auth_verbose = yes/' -i 10-logging.conf
 sed 's/#auth_verbose_passwords = no/auth_verbose_passwords = yes/' -i 10-logging.conf
 
+if [ "$AUTH_DEBUG" = "yes" ]; then
+    sed 's/#auth_debug = no/auth_debug = yes/' -i 10-logging.conf
+fi
+if [ "$AUTH_DEBUG_PASSWORDS" = "yes" ]; then
+    sed 's/#auth_debug_passwords = no/auth_debug_passwords= yes/' -i 10-logging.conf
+fi
+
 
 # 10-mail.conf
 sed 's|#mail_location =|mail_location = mdbox:~/mdbox|' -i 10-mail.conf

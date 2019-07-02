@@ -76,6 +76,10 @@ services:
     # depends_on:
     #   - postfix
 
+    environment:
+      AUTH_DEBUG: yes
+      AUTH_DEBUG_PASSWORDS: yes
+
     volumes:
       - /home/dominios:/home/dominios
       # - ./dominios:/home/dominios
