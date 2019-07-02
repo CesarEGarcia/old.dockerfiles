@@ -88,6 +88,7 @@ services:
       - ./logs:/var/log/dovecot
       - ./spool:/opt/dovecot/spool
       # - ./data:/opt/postfix/data
+      - /etc/letsencrypt:/etc/letsencrypt
 
     ports:
       - "110:110"
