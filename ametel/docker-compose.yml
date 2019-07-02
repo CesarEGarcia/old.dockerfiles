@@ -66,8 +66,8 @@ services:
 
   dovecot:
     environment:
-      IMAP_IP:  51.91.13.123
-      POP3_IP:  51.91.13.123
+      IMAP_IP:  localhost
+      POP3_IP:  localhost
 
     build:
       context: docker/dovecot
