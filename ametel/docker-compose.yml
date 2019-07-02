@@ -73,6 +73,9 @@ services:
     build:
       context: docker/dovecot
 
+    depends_on:
+      - postfix
+
     volumes:
       - /home/dominios:/home/dominios
       # - ./dominios:/home/dominios
