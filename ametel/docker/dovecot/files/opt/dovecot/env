@@ -35,8 +35,8 @@ sed 's|#mail_location =|mail_location = mdbox:~/mdbox|' -i 10-mail.conf
 # 10-ssl.conf
 if [ -n $SSL ]; then
     sed 's/#ssl = yes/ssl = yes/' -i 10-ssl.conf
-    sed 's|ssl_cert =.*|ssl_cert = /etc/letsencrypt/live/'${SSL}'/fullchain.pem|' -i 10-ssl.conf
-    sed 's|ssl_key =.*|ssl_key = /etc/letsencrypt/live/'${SSL}'/privkey.pem|' -i 10-ssl.conf
+    sed 's|ssl_cert =.*|ssl_cert = </etc/letsencrypt/live/'${SSL}'/fullchain.pem|' -i 10-ssl.conf
+    sed 's|ssl_key =.*|ssl_key = </etc/letsencrypt/live/'${SSL}'/privkey.pem|' -i 10-ssl.conf
 fi
 
 #sed -e '/^ssl_cert =/ s/^#*/#/' -i 10-ssl.conf

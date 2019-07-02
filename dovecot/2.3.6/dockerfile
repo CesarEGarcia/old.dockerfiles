@@ -16,6 +16,7 @@ RUN set -x \
 	&& yum -y install gcc \
 	&& yum -y install make \
     && yum -y install wget \
+    && yum -y install openssl-devel \
     && yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
     && yum -y install supervisor \
     \
@@ -45,6 +46,7 @@ RUN set -x \
     \
     && yum -y remove gcc \
     && yum -y remove make \
+    && yum -y remove openssl-devel \
     && yum -y remove wget \
     && yum clean all
 
