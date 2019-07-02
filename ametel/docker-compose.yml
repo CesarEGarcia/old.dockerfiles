@@ -76,19 +76,19 @@ services:
       # - /home/dominios:/home/dominios
       # - ./dominios:/home/dominios
       - ./etc:/opt/dovecot/conf
-      - ./logs:/var/log/dovecot
+      # - ./logs:/var/log/dovecot
       - ./spool:/opt/dovecot/spool
       # - ./data:/opt/postfix/data
 
     ports:
-      # - "110:110"
+      - "110:110"
       - "143:143"
       - "993:993"
       - "995:995"
-      - target: 110
-        published: 110
-        protocol: tcp
-        mode: host
+      # - target: 110
+      #   published: 110
+      #   protocol: tcp
+      #   mode: host
 
     networks:
       - localNetwork
