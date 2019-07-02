@@ -81,14 +81,14 @@ services:
       # - ./data:/opt/postfix/data
 
     ports:
-      - "110:110"
+      # - "110:110"
       - "143:143"
       - "993:993"
       - "995:995"
-      # - target: 110
-      #   published: 110
-      #   protocol: tcp
-      #   mode: host
+      - target: 110
+        published: 110
+        protocol: tcp
+        mode: host
 
     networks:
       - localNetwork
