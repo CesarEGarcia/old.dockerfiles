@@ -77,7 +77,8 @@ services:
     #   - postfix
 
     environment:
-      AUTH_DEBUG: "yes"
+      SSL:                  "mx.ametel.es"
+      AUTH_DEBUG:           "yes"
       AUTH_DEBUG_PASSWORDS: "yes"
 
     volumes:
