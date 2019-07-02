@@ -16,6 +16,7 @@ echo $'\n\n' >> /opt/postfix/etc/main.cf
 
 mkdir /opt/postfix/data
 chown postfix.postfix /opt/postfix/data
+rm /opt/postfix/data/master.lock
 chown vmail.vmail /home/dominios
 
 exit 0
