@@ -21,8 +21,8 @@ sed 's|#mail_location =|mail_location = mdbox:~/mdbox|' -i 10-mail.conf
 
 
 # 10-master.conf
-sed 's/{IMAP_IP}/'${IMAP_IP}'/g' -i 10-master.conf
-sed 's/{POP3_IP}/'${POP3_IP}'/g' -i 10-master.conf
+#sed 's/{IMAP_IP}/'${IMAP_IP}'/g' -i 10-master.conf
+#sed 's/{POP3_IP}/'${POP3_IP}'/g' -i 10-master.conf
 
 
 # 10-ssl.conf
