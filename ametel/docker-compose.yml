@@ -14,8 +14,9 @@ services:
 
     volumes:
       - /home/dominios:/home/dominios
+      # - ./dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./logs:/var/log/host
+      - ./logs:/var/log/postfix
       - ./spool:/opt/postfix/spool
       - ./data:/opt/postfix/data
 
@@ -73,10 +74,10 @@ services:
       context: docker/dovecot
 
     volumes:
-      # - /home/dominios:/home/dominios
+      - /home/dominios:/home/dominios
       # - ./dominios:/home/dominios
       - ./etc:/opt/dovecot/conf
-      # - ./logs:/var/log/dovecot
+      - ./logs:/var/log/dovecot
       - ./spool:/opt/dovecot/spool
       # - ./data:/opt/postfix/data
 
