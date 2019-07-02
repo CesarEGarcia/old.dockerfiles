@@ -16,7 +16,7 @@
     log_path                = /var/log/dovecot/dovecot.log
     info_log_path           = /var/log/dovecot/dovecot-info.log
     auth_verbose            = yes
-    auth_verbose_passwords  = yes    
+    auth_verbose_passwords  = yes
 
 
 10-main.conf
@@ -112,7 +112,7 @@
     service sieve-execute-script {
     }
 
-    auth-passwdfile.conf.ext
+auth-passwdfile.conf.ext
         passdb {
             driver = passwd-file
             args = scheme=CRYPT username_format=%u /opt/usuarios/passwords/%d

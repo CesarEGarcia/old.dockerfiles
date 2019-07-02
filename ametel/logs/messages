@@ -1,1 +1,17 @@
 Jun 26 16:34:57 b6243b7c54be rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  1 12:29:04 7c3d7955fcf7 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  1 18:33:32 14354c3d9b3e rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 06:37:06 12743cdae84f rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 06:39:40 49360c5bbedc rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 06:56:22 63191bfe164b rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="12" x-info="http://www.rsyslog.com"] start
+Jul  2 06:58:59 a6553d6e7882 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 07:01:46 70811e041a15 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 08:52:07 48ba76ad2791 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 09:08:23 4c7d1ebc86de rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="10" x-info="http://www.rsyslog.com"] start
+Jul  2 09:32:36 823aae9fb141 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="10" x-info="http://www.rsyslog.com"] start
+Jul  2 09:54:21 2da2e0bf1e59 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="10" x-info="http://www.rsyslog.com"] start
+Jul  2 09:56:56 d4c8fe494de9 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="12" x-info="http://www.rsyslog.com"] start
+Jul  2 10:30:45 89cba7320788 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 10:31:23 9145456a13d6 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 10:36:02 b90a40ad8658 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
+Jul  2 10:38:33 270d7a9a9363 rsyslogd:  [origin software="rsyslogd" swVersion="8.24.0-34.el7" x-pid="11" x-info="http://www.rsyslog.com"] start
