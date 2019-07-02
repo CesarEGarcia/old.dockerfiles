@@ -77,8 +77,8 @@ services:
     #   - postfix
 
     environment:
-      AUTH_DEBUG: yes
-      AUTH_DEBUG_PASSWORDS: yes
+      AUTH_DEBUG: "yes"
+      AUTH_DEBUG_PASSWORDS: "yes"
 
     volumes:
       - /home/dominios:/home/dominios
