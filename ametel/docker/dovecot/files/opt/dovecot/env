@@ -35,7 +35,6 @@ sed 's|args = scheme=CRYPT username_format=%u /etc/dovecot/users|args = scheme=C
 sed 's|args = username_format=%u /etc/dovecot/users|args = username_format=%u /opt/dovecot/conf/passwords/%d|' -i auth-passwdfile.conf.ext
 
 
-
-
-
+mkdir /opt/dovecot/spool/private -p
+chown postfix /opt/dovecot/spool/private
 exit 0
