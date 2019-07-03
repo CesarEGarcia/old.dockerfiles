@@ -87,7 +87,6 @@ services:
         check_recipient_access hash:/opt/postfix/conf/bloquear_destinos,
         check_sender_access hash:/opt/postfix/conf/bloquear_envios,
         permit_sasl_authenticated,
-        reject_unauth_destination,
         reject
 
     networks:
