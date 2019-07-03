@@ -15,7 +15,7 @@ services:
       - ./etc:/opt/postfix/conf
       - ./logs:/var/log/postfix
       - ./spool.MX:/opt/postfix/spool
-      - ./data.MX:/opt/postfix/data
+      # - ./data.MX:/opt/postfix/data
 
     environment:
       SSL:                      "mx.ametel.es"
@@ -66,9 +66,9 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./logs:/var/log/postfix
+      - ./logs.COUK:/var/log/postfix
       - ./spool.COUK:/opt/postfix/spool
-      - ./data.COUK:/opt/postfix/data
+      # - ./data.COUK:/opt/postfix/data
 
     environment:
       SSL:                      "test.ametel.co.uk"
