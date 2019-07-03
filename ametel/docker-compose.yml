@@ -68,8 +68,8 @@ services:
       - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
       - ./logs:/var/log/postfix
-      - ./spool_couk:/opt/postfix/spool
-      - ./data_couk:/opt/postfix/data
+      - ./spool_COUK:/opt/postfix/spool
+      - ./data_COUK:/opt/postfix/data
 
     environment:
       SSL:                      "test.ametel.co.uk"
@@ -124,7 +124,7 @@ services:
       # - ./dominios:/home/dominios
       - ./etc:/opt/dovecot/conf
       - ./logs:/var/log/dovecot
-      - ./spool:/opt/dovecot/spool
+      - ./spool.COUK:/opt/dovecot/spool.COKU
       # - ./data:/opt/postfix/data
       - /etc/letsencrypt:/etc/letsencrypt
 
