@@ -10,9 +10,11 @@
 /opt/postfix/bin/postconf "virtual_alias_maps           = ${VIRTUAL_ALIAS_MAPS}"
 
 # postconf no admite multilineas
-echo $'\n\nsmtpd_recipient_restrictions =' >> /opt/postfix/etc/main.cf
+echo '' >> /opt/postfix/etc/main.cf
+echo 'smtpd_recipient_restrictions =' >> /opt/postfix/etc/main.cf
 echo "     $SMTPD_RECIPIENT_RESTRICTIONS" | awk -F',' '{$1=$1}1' OFS='\n    ' >> /opt/postfix/etc/main.cf
-echo $'\n\n' >> /opt/postfix/etc/main.cf
+echo '' >> /opt/postfix/etc/main.cf
+echo '' >> /opt/postfix/etc/main.cf
 
 if [ -n $SSL ]; then
     echo 'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${SSL}'/fullchain.pem' >> /opt/postfix/etc/main.cf
