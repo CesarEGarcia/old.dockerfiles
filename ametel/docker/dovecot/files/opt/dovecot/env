@@ -42,6 +42,9 @@ fi
 #sed -e '/^ssl_cert =/ s/^#*/#/' -i 10-ssl.conf
 #sed -e '/^ssl_key =/  s/^#*/#/' -i 10-ssl.conf
 
+# 20-lmtp.conf
+sed 's/#lmtp_proxy = no/lmtp_proxy = yes/' -i 20-lmtp.conf
+
 
 # auth-passwdfile.conf.ext
 sed 's|args = scheme=CRYPT username_format=%u /etc/dovecot/users|args = scheme=CRYPT username_format=%u /opt/dovecot/conf/passwords/%d|' -i auth-passwdfile.conf.ext
