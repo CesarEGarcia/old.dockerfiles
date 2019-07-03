@@ -15,15 +15,15 @@ echo "     $SMTPD_RECIPIENT_RESTRICTIONS" | awk -F',' '{$1=$1}1' OFS='\n    ' >>
 echo $'\n\n' >> /opt/postfix/etc/main.cf
 
 if [ -n $SSL ]; then
-    echo $'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${SSL}'/fullchain.pem\n' >> /opt/postfix/etc/main.cf
-    echo $'smtpd_tls_key_file        = /etc/letsencrypt/live/'${SSL}'/privkey.pem\n' >> /opt/postfix/etc/main.cf
-    echo $'smtpd_tls_received_header = yes\n' >> /opt/postfix/etc/main.cf
-    echo $'smtpd_tls_security_level  = may\n' >> /opt/postfix/etc/main.cf
-    echo $'tls_random_source         = dev:/dev/urandom\n' >> /opt/postfix/etc/main.cf
-    echo $'smtpd_tls_loglevel        = 1\n' >> /opt/postfix/etc/main.cf
-    echo $'smtp_tls_security_level   = may\n' >> /opt/postfix/etc/main.cf
-    echo $'smtp_tls_loglevel         = 1\n' >> /opt/postfix/etc/main.cf
-    echo $'\n\n' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${SSL}'/fullchain.pem' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_key_file        = /etc/letsencrypt/live/'${SSL}'/privkey.pem' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_received_header = yes' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_security_level  = may' >> /opt/postfix/etc/main.cf
+    echo 'tls_random_source         = dev:/dev/urandom' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_loglevel        = 1' >> /opt/postfix/etc/main.cf
+    echo 'smtp_tls_security_level   = may' >> /opt/postfix/etc/main.cf
+    echo 'smtp_tls_loglevel         = 1' >> /opt/postfix/etc/main.cf
+    echo '\n\n' >> /opt/postfix/etc/main.cf
 fi
 
 mkdir /opt/postfix/data
