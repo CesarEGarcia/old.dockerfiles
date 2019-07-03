@@ -1,24 +1,21 @@
 version: '3.7'
 
 services:
-  postfix:
+  postfix_mx:
 
     build:
       context: docker/postfix
 
     ports:
-      - target: 25
-        published: 25
-        protocol: tcp
-        mode: host
+      - "51.91.13.123:25:25"
 
     volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
-      # - ./dominios:/home/dominios
       - ./etc:/opt/postfix/conf
       - ./logs:/var/log/postfix
-      - ./spool:/opt/postfix/spool
-      - ./data:/opt/postfix/data
+      - ./spool.MX:/opt/postfix/spool
+      - ./data.MX:/opt/postfix/data
 
     environment:
       SSL:                      "mx.ametel.es"
@@ -58,6 +55,46 @@ services:
     networks:
       - localNetwork
 
+  postfix_couk:
+
+    build:
+      context: docker/postfix
+
+    ports:
+      - "147.135.246.57:25:25"
+
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /home/dominios:/home/dominios
+      - ./etc:/opt/postfix/conf
+      - ./logs:/var/log/postfix
+      - ./spool_couk:/opt/postfix/spool
+      - ./data_couk:/opt/postfix/data
+
+    environment:
+      SSL:                      "test.ametel.co.uk"
+      SASL:                     "yes"
+      MULTI_INSTANCE_NAME:      "couk"
+      MY_HOSTNAME:              mx.ametel.es
+      MY_NETWORKS:              127.0.0.1
+      SMTP_BIND_ADDRESS:        51.91.13.123
+      VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
+      VIRTUAL_MAILBOX_BASE:     /home/dominios
+      VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
+      VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
+
+      SMTPD_RECIPIENT_RESTRICTIONS: >
+        permit_mynetworks,
+        check_recipient_access hash:/opt/postfix/conf/bloquear_destinos,
+        check_sender_access hash:/opt/postfix/conf/bloquear_envios,
+        permit_sasl_authenticated,
+        reject_unauth_destination,
+        reject
+
+    networks:
+      - localNetwork
+
+
   postmap:
     image: existo/postfix:3.4.5
     working_dir: /opt/postfix/conf
@@ -92,10 +129,10 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
 
     ports:
-      - "110:110"
-      - "143:143"
-      - "993:993"
-      - "995:995"
+      - "147.135.246.57:110:110"
+      - "147.135.246.57:143:143"
+      - "147.135.246.57:993:993"
+      - "147.135.246.57:995:995"
       # - target: 110
       #   published: 110
       #   protocol: tcp

@@ -42,16 +42,15 @@ virtual_mailbox_limit = 0
 message_size_limit    = 51200000
 
 # Usuarios y dominios
-alias_maps                  = hash:/etc/aliases
-virtual_mailbox_domains     = VIRTUAL_DOMAINS
-virtual_mailbox_base        = VIRTUAL_MAILBOX_BASE
-virtual_mailbox_maps        = VIRTUAL_MAILBOX_MAPS
-virtual_minimum_uid         = 700
-virtual_uid_maps            = static:700
-virtual_gid_maps            = static:700
-virtual_alias_maps          = VIRTUAL_ALIAS_MAPS
-virtual_transport           = lmtp:unix:private/dovecot-lmtp
-lmtp_destination_rate_delay = 0s
+alias_maps              = hash:/etc/aliases
+virtual_mailbox_domains = VIRTUAL_DOMAINS
+virtual_mailbox_base    = VIRTUAL_MAILBOX_BASE
+virtual_mailbox_maps    = VIRTUAL_MAILBOX_MAPS
+virtual_minimum_uid     = 700
+virtual_uid_maps        = static:700
+virtual_gid_maps        = static:700
+virtual_alias_maps      = VIRTUAL_ALIAS_MAPS
+virtual_transport       = lmtp:unix:private/dovecot-lmtp
 
 # Copias de mensajes
 #recipient_bcc_maps      = regexp:/opt/usuarios/bcc_recibidos
@@ -96,3 +95,9 @@ smtpd_client_connection_count_limit = 10
 
 #check_client_access regexp:/opt/postfix/etc.MX/fqrdns.regexp
 
+# sender_dependent_default_transport_maps = hash:/opt/usuarios/sender_transport
+
+#smtpd_milters = unix:private/existoMilter, inet:localhost:8891
+#milter_default_action = accept
+#milter_protocol = 6
+#non_smtpd_milters = inet:localhost:8891
