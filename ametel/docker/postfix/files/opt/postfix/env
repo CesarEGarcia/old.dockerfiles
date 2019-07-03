@@ -11,6 +11,7 @@
 
 # postconf no admite multilineas
 echo '' >> /opt/postfix/etc/main.cf
+echo '' >> /opt/postfix/etc/main.cf
 echo 'smtpd_recipient_restrictions =' >> /opt/postfix/etc/main.cf
 echo "     $SMTPD_RECIPIENT_RESTRICTIONS" | awk -F',' '{$1=$1}1' OFS='\n    ' >> /opt/postfix/etc/main.cf
 echo '' >> /opt/postfix/etc/main.cf
@@ -34,7 +35,7 @@ if [ "$SASL" = "yes" ]; then
     echo '' >> opt/postfix/etc/main.cf
     echo '##############' >> /opt/postfix/etc/main.cf
     echo '#${SASL} = yes' >> /opt/postfix/etc/main.cf
-    echo 'smtpd_sasl_auth_enable          = yes'
+    echo 'smtpd_sasl_auth_enable          = yes' >> opt/postfix/etc/main.cf
     echo 'smtpd_sasl_security_options     = noanonymous' >> opt/postfix/etc/main.cf
     echo 'broken_sasl_auth_clients        = yes' >> opt/postfix/etc/main.cf
     echo 'smtpd_sasl_type                 = dovecot' >> opt/postfix/etc/main.cf

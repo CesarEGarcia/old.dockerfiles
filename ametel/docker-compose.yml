@@ -47,7 +47,7 @@ services:
         #       check_client_access pcre:/opt/postfix/conf/filter_default,
         reject_rbl_client bl.spamcop.net,
         reject_rbl_client zen.spamhaus.org,
-        reject_rhsbl_sender dbl.spamhaus.org,
+        # reject_rhsbl_sender dbl.spamhaus.org,
         ##        check_policy_service unix:private/postgrey,
         permit
 
