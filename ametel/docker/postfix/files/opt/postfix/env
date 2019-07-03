@@ -23,7 +23,8 @@ if [ -n $SSL ]; then
     echo 'smtpd_tls_loglevel        = 1' >> /opt/postfix/etc/main.cf
     echo 'smtp_tls_security_level   = may' >> /opt/postfix/etc/main.cf
     echo 'smtp_tls_loglevel         = 1' >> /opt/postfix/etc/main.cf
-    echo '\n\n' >> /opt/postfix/etc/main.cf
+    echo '' >> /opt/postfix/etc/main.cf
+    echo '' >> /opt/postfix/etc/main.cf
 fi
 
 mkdir /opt/postfix/data
