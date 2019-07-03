@@ -36,7 +36,9 @@ if [ "$SASL" = "yes" ]; then
     echo 'smtpd_sasl_security_options     = noanonymous' >> opt/postfix/etc/main.cf
     echo 'broken_sasl_auth_clients        = yes' >> opt/postfix/etc/main.cf
     echo 'smtpd_sasl_type                 = dovecot' >> opt/postfix/etc/main.cf
-    echo 'smtpd_sasl_path                 = private/auth' >> opt/postfix/etc/main.cf
+    # echo 'smtpd_sasl_path                 = private/auth' >> opt/postfix/etc/main.cf
+    echo 'smtpd_sasl_path                 = inet:dovecot:12345' >> opt/postfix/etc/main.cf
+
     #Meter una cabecera con el usuario autenticdo
     #smtpd_sasl_authenticated_header = yes
     echo '' >> /opt/postfix/etc/main.cf
