@@ -28,7 +28,6 @@ services:
       VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
       VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
 
-
       SMTPD_RECIPIENT_RESTRICTIONS: >
         permit_mynetworks,
         reject_unauth_destination,
@@ -115,7 +114,7 @@ services:
     #   - postfix
 
     environment:
-      SSL:                  "mx.ametel.es"
+      SSL:                  "test.ametel.co.uk"
       AUTH_DEBUG:           "yes"
       AUTH_DEBUG_PASSWORDS: "yes"
 
