@@ -21,6 +21,7 @@ services:
       - ./data:/opt/postfix/data
 
     environment:
+      SSL:                      "mx.ametel.es"
       MULTI_INSTANCE_NAME:      MX
       MY_HOSTNAME:              mx.ametel.es
       MY_NETWORKS:              127.0.0.1
