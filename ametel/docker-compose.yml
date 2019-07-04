@@ -103,8 +103,8 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./logs.COUK:/var/log/postfix
-      - ./spool.COUK:/opt/postfix/spool
+      - ./logs.MOY:/var/log/postfix
+      - ./spool.MOY:/opt/postfix/spool
 
     environment:
       SSL:                      "test.moyselec.es"
