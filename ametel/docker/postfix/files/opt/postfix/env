@@ -5,7 +5,7 @@ if  [ "$SUBMISSION" = "yes" ]; then
 fi
 
 if  [ "$SMTPS" = "yes" ]; then
-    /opt/postfix/bin/postconf -M smtps/inet="inet  n       -       n       -       -       smtpd"
+    /opt/postfix/bin/postconf -M smtps/inet="smtps   inet  n       -       n       -       -       smtpd"
 fi
 
 /opt/postfix/bin/postconf "multi_instance_name          = ${MULTI_INSTANCE_NAME}"
