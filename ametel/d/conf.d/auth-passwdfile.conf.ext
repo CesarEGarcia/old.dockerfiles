@@ -18,3 +18,8 @@ userdb {
   # Override fields from passwd-file
   #override_fields = home=/home/virtual/%u
 }
+
+passdb {
+  master = yes
+  pass = yes
+}

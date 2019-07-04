@@ -1,0 +1,12 @@
+FROM existo/dovecot:2.3.6
+
+COPY files /
+
+RUN chmod 700 /opt/dovecot/env
+
+# SSL = "no" si no lleva SSL o el nombre del certificado
+ENV SSL = "no" \
+    AUTH_DEBUG = "no" \
+    AUTH_DEBUG_PASSWORDS = "no"
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

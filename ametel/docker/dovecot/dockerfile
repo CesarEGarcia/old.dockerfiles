@@ -8,6 +8,7 @@ RUN set -x \
 
 COPY files /
 
+
 RUN chmod 700 /opt/dovecot/env
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
