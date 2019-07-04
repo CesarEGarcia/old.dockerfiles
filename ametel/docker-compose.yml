@@ -172,7 +172,7 @@ services:
       - /home/dominios:/home/dominios
       - /etc/letsencrypt:/etc/letsencrypt
       - ./etc:/opt/dovecot/conf
-      - ./logs-moy:/var/log/dovecot
+      - ./logs.MOY:/var/log/dovecot
 
     ports:
       - "137.74.217.21:110:110"
