@@ -13,7 +13,7 @@ services:
       - /home/dominios:/home/dominios
       - /etc/letsencrypt:/etc/letsencrypt
       - ./etc:/opt/postfix/conf
-      - ./logs:/var/log/postfix
+      - ./log.MX:/var/log/postfix
       - ./spool.MX:/opt/postfix/spool
 
     environment:
@@ -65,14 +65,14 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./logs.COUK:/var/log/postfix
+      - ./log.COUK:/var/log/postfix
       - ./spool.COUK:/opt/postfix/spool
 
     environment:
-      SSL:                      "test.ametel.co.uk"
+      SSL:                      "mail.ametel.co.uk"
       SASL:                     "yes"
       MULTI_INSTANCE_NAME:      "couk"
-      MY_HOSTNAME:              test.ametel.co.uk
+      MY_HOSTNAME:              mail.ametel.co.uk
       MY_NETWORKS:              127.0.0.1
       SMTP_BIND_ADDRESS:        51.91.13.123
       VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
@@ -103,14 +103,14 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./logs.MOY:/var/log/postfix
+      - ./log.MOY:/var/log/postfix
       - ./spool.MOY:/opt/postfix/spool
 
     environment:
-      SSL:                      "test.moyselec.es"
+      SSL:                      "mail.moyselec.es"
       SASL:                     "yes"
       MULTI_INSTANCE_NAME:      "moyselec"
-      MY_HOSTNAME:              test.moyselec.es
+      MY_HOSTNAME:              mail.moyselec.es
       MY_NETWORKS:              127.0.0.1
       SMTP_BIND_ADDRESS:        51.91.13.123
       VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
@@ -139,25 +139,25 @@ services:
 
   dovecot:
 
-    build:
-      context: docker/dovecot
+    image: dovecot-existo:2.3.6-1
 
     environment:
-      SSL:                  "test.ametel.co.uk"
-      AUTH_DEBUG:           "yes"
-      AUTH_DEBUG_PASSWORDS: "yes"
+      NAME:                 "ametel.co.uk"
+      SSL:                  "mail.ametel.co.uk"
+      AUTH_DEBUG:           "no"
+      AUTH_DEBUG_PASSWORDS: "no"
 
     volumes:
       - /home/dominios:/home/dominios
       - /etc/letsencrypt:/etc/letsencrypt
       - ./etc:/opt/dovecot/conf
-      - ./logs:/var/log/dovecot
+      - ./log:/var/log/dovecot
 
     ports:
-      - "147.135.246.57:110:110"
-      - "147.135.246.57:143:143"
-      - "147.135.246.57:993:993"
-      - "147.135.246.57:995:995"
+      - "mail.ametel.co.uk:110:110"
+      - "mail.ametel.co.uk:143:143"
+      - "mail.ametel.co.uk:993:993"
+      - "mail.ametel.co.uk:995:995"
 
     networks:
       - localNetwork
@@ -165,23 +165,23 @@ services:
 
   dovecot_moyselec:
 
-    build:
-      context: docker/dovecot
+    image: dovecot-existo:2.3.6-1
 
     environment:
-      SSL: "test.moyselec.es"
+      NAME: "moyselec.es"
+      SSL:  "mail.moyselec.es"
 
     volumes:
       - /home/dominios:/home/dominios
       - /etc/letsencrypt:/etc/letsencrypt
       - ./etc:/opt/dovecot/conf
-      - ./logs.MOY:/var/log/dovecot
+      - ./log:/var/log/dovecot
 
     ports:
-      - "137.74.217.21:110:110"
-      - "137.74.217.21:143:143"
-      - "137.74.217.21:993:993"
-      - "137.74.217.21:995:995"
+      - "mail.moyselec.es:110:110"
+      - "mail.moyselec.es:143:143"
+      - "mail.moyselec.es:993:993"
+      - "mail.moyselec.es:995:995"
 
     networks:
       - localNetwork

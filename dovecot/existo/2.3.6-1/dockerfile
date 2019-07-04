@@ -4,8 +4,10 @@ COPY files /
 
 RUN chmod 700 /opt/dovecot/env
 
+# NAME = nombre del fichero de logs dovecot.${NAME}.log
 # SSL = "no" si no lleva SSL o el nombre del certificado
-ENV SSL = "no" \
+ENV NAME = "existo-dovecot" \
+    SSL = "no" \
     AUTH_DEBUG = "no" \
     AUTH_DEBUG_PASSWORDS = "no"
 

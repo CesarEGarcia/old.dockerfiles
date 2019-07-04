@@ -19,8 +19,8 @@ sed 's/#!include auth-passwdfile.conf.ext/!include auth-passwdfile.conf.ext/' -i
 ###################
 # 10-logging.conf
 ###################
-sed 's|#log_path =.*|log_path = /var/log/dovecot/dovecot.log|' -i 10-logging.conf
-sed 's|#info_log_path =.*|info_log_path = /var/log/dovecot/dovecot-info.log|' -i 10-logging.conf
+sed 's|#log_path =.*|log_path = /var/log/dovecot/dovecot.'${NAME}'.log|' -i 10-logging.conf
+sed 's|#info_log_path =.*|info_log_path = /var/log/dovecot/dovecot-info.'${NAME}'.log|' -i 10-logging.conf
 sed 's/#auth_verbose = no/auth_verbose = yes/' -i 10-logging.conf
 sed 's/#auth_verbose_passwords = no/auth_verbose_passwords = yes/' -i 10-logging.conf
 
