@@ -67,13 +67,50 @@ services:
       - ./etc:/opt/postfix/conf
       - ./logs.COUK:/var/log/postfix
       - ./spool.COUK:/opt/postfix/spool
-      # - ./data.COUK:/opt/postfix/data
 
     environment:
       SSL:                      "test.ametel.co.uk"
       SASL:                     "yes"
       MULTI_INSTANCE_NAME:      "couk"
-      MY_HOSTNAME:              mx.ametel.es
+      MY_HOSTNAME:              test.ametel.co.uk
+      MY_NETWORKS:              127.0.0.1
+      SMTP_BIND_ADDRESS:        51.91.13.123
+      VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
+      VIRTUAL_MAILBOX_BASE:     /home/dominios
+      VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
+      VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
+
+      SMTPD_RECIPIENT_RESTRICTIONS: >
+        permit_mynetworks,
+        check_recipient_access hash:/opt/postfix/conf/bloquear_destinos,
+        check_sender_access hash:/opt/postfix/conf/bloquear_envios,
+        permit_sasl_authenticated,
+        reject
+
+    networks:
+      - localNetwork
+
+
+  postfix_moy:
+
+    build:
+      context: docker/postfix
+
+    ports:
+      - "137.74.217.21:25:25"
+
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /home/dominios:/home/dominios
+      - ./etc:/opt/postfix/conf
+      - ./logs.COUK:/var/log/postfix
+      - ./spool.COUK:/opt/postfix/spool
+
+    environment:
+      SSL:                      "test.moyselec.es"
+      SASL:                     "yes"
+      MULTI_INSTANCE_NAME:      "moyselec"
+      MY_HOSTNAME:              test.moyselec.es
       MY_NETWORKS:              127.0.0.1
       SMTP_BIND_ADDRESS:        51.91.13.123
       VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
