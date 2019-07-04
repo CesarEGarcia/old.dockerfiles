@@ -65,6 +65,7 @@ echo '' >> auth-passwdfile.conf.ext
 
 
 
+
 mkdir /opt/dovecot/spool/private -p
 chown postfix /opt/dovecot/spool/private
 exit 0
