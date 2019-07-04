@@ -55,7 +55,7 @@ echo 'passdb {' >> auth-passwdfile.conf.ext
 echo '  driver = passwd-file' >> auth-passwdfile.conf.ext
 echo '  args = /opt/dovecot/conf/passwords/master' >> auth-passwdfile.conf.ext
 echo '  master = yes' >> auth-passwdfile.conf.ext
-echo '  pass = test' >> auth-passwdfile.conf.ext
+echo '  pass = yes' >> auth-passwdfile.conf.ext
 echo '}' >> auth-passwdfile.conf.ext
 echo '' >> auth-passwdfile.conf.ext
 echo '' >> auth-passwdfile.conf.ext
