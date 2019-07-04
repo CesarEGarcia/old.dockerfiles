@@ -154,10 +154,10 @@ services:
       - ./log:/var/log/dovecot
 
     ports:
-      - "mail.ametel.co.uk:110:110"
-      - "mail.ametel.co.uk:143:143"
-      - "mail.ametel.co.uk:993:993"
-      - "mail.ametel.co.uk:995:995"
+      - "147.135.246.57:110:110"
+      - "147.135.246.57:143:143"
+      - "147.135.246.57:993:993"
+      - "147.135.246.57:995:995"
 
     networks:
       - localNetwork
@@ -178,10 +178,10 @@ services:
       - ./log:/var/log/dovecot
 
     ports:
-      - "mail.moyselec.es:110:110"
-      - "mail.moyselec.es:143:143"
-      - "mail.moyselec.es:993:993"
-      - "mail.moyselec.es:995:995"
+      - "137.74.217.21:110:110"
+      - "137.74.217.21:143:143"
+      - "137.74.217.21:993:993"
+      - "137.74.217.21:995:995"
 
     networks:
       - localNetwork
