@@ -55,11 +55,15 @@ services:
 
   postfix_couk:
 
+    # https://www.mind-it.info/2014/02/20/change-postfix-master-cf-postconf/
+
     build:
       context: docker/postfix
 
     ports:
       - "147.135.246.57:25:25"
+      - "147.135.246.57:465:465"
+      - "147.135.246.57:587:587"
 
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
@@ -69,6 +73,8 @@ services:
       - ./spool.COUK:/opt/postfix/spool
 
     environment:
+      SMTPS:                    "yes"
+      SUBMISSION:               "yes"
       SSL:                      "mail.ametel.co.uk"
       SASL:                     "yes"
       MULTI_INSTANCE_NAME:      "couk"
@@ -98,6 +104,8 @@ services:
 
     ports:
       - "137.74.217.21:25:25"
+      - "137.74.217.21:465:465"
+      - "137.74.217.21:587:587"
 
     volumes:
       - /etc/letsencrypt:/etc/letsencrypt
@@ -107,6 +115,8 @@ services:
       - ./spool.MOY:/opt/postfix/spool
 
     environment:
+      SMTPS:                    "yes"
+      SUBMISSION:               "yes"
       SSL:                      "mail.moyselec.es"
       SASL:                     "yes"
       MULTI_INSTANCE_NAME:      "moyselec"

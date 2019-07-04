@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if  [ "$SUBMISSION" = "yes" ]; then
+    /opt/postfix/bin/postconf -M submission/inet="submission   inet   n   -   n   -   -   smtpd"
+fi
+
+if  [ "$SMTPS" = "yes" ]; then
+    /opt/postfix/bin/postconf -M smtps/inet="inet  n       -       n       -       -       smtpd"
+fi
+
 /opt/postfix/bin/postconf "multi_instance_name          = ${MULTI_INSTANCE_NAME}"
 /opt/postfix/bin/postconf "myhostname                   = ${MY_HOSTNAME}"
 /opt/postfix/bin/postconf "mynetworks                   = ${MY_NETWORKS}"
