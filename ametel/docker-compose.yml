@@ -10,12 +10,11 @@ services:
       - "51.91.13.123:25:25"
 
     volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
+      - /etc/letsencrypt:/etc/letsencrypt
       - ./etc:/opt/postfix/conf
       - ./logs:/var/log/postfix
       - ./spool.MX:/opt/postfix/spool
-      # - ./data.MX:/opt/postfix/data
 
     environment:
       SSL:                      "mx.ametel.es"
@@ -102,15 +101,9 @@ services:
 
 
   dovecot:
-    # environment:
-    #   IMAP_IP:  localhost
-    #   POP3_IP:  localhost
 
     build:
       context: docker/dovecot
-
-    # depends_on:
-    #   - postfix
 
     environment:
       SSL:                  "test.ametel.co.uk"
@@ -119,26 +112,39 @@ services:
 
     volumes:
       - /home/dominios:/home/dominios
-      # - ./dominios:/home/dominios
+      - /etc/letsencrypt:/etc/letsencrypt
       - ./etc:/opt/dovecot/conf
       - ./logs:/var/log/dovecot
-      # - ./spool.COUK:/opt/dovecot/spool.COKU
-      # - ./data:/opt/postfix/data
-      - /etc/letsencrypt:/etc/letsencrypt
 
     ports:
       - "147.135.246.57:110:110"
       - "147.135.246.57:143:143"
       - "147.135.246.57:993:993"
       - "147.135.246.57:995:995"
-      # - target: 110
-      #   published: 110
-      #   protocol: tcp
-      #   mode: host
+
+
+  dovecot_moyselec:
+
+    build:
+      context: docker/dovecot
+
+    environment:
+      SSL: "test.moyselec.es"
+
+    volumes:
+      - /home/dominios:/home/dominios
+      - /etc/letsencrypt:/etc/letsencrypt
+      - ./etc:/opt/dovecot/conf
+      - ./logs-moy:/var/log/dovecot
+
+    ports:
+      - "137.74.217.21:110:110"
+      - "137.74.217.21:143:143"
+      - "137.74.217.21:993:993"
+      - "137.74.217.21:995:995"
 
     networks:
       - localNetwork
-
 
 networks:
   localNetwork:
