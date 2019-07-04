@@ -159,6 +159,9 @@ services:
       - "147.135.246.57:993:993"
       - "147.135.246.57:995:995"
 
+    networks:
+      - localNetwork
+
 
   dovecot_moyselec:
 
