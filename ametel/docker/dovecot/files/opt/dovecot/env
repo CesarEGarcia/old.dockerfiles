@@ -49,6 +49,20 @@ sed 's/#lmtp_proxy = no/lmtp_proxy = yes/' -i 20-lmtp.conf
 # auth-passwdfile.conf.ext
 sed 's|args = scheme=CRYPT username_format=%u /etc/dovecot/users|args = scheme=CRYPT username_format=%u /opt/dovecot/conf/passwords/%d|' -i auth-passwdfile.conf.ext
 sed 's|args = username_format=%u /etc/dovecot/users|args = username_format=%u /opt/dovecot/conf/passwords/%d|' -i auth-passwdfile.conf.ext
+echo '' >> auth-passwdfile.conf.ext
+echo '' >> auth-passwdfile.conf.ext
+echo 'passdb {' >> auth-passwdfile.conf.ext
+echo '  driver = passwd-file' >> auth-passwdfile.conf.ext
+echo '  args = /opt/dovecot/conf/passwords/master' >> auth-passwdfile.conf.ext
+echo '  master = yes' >> auth-passwdfile.conf.ext
+echo '  pass = test' >> auth-passwdfile.conf.ext
+echo '}' >> auth-passwdfile.conf.ext
+echo '' >> auth-passwdfile.conf.ext
+echo '' >> auth-passwdfile.conf.ext
+echo 'auth_master_user_separator = *' >> auth-passwdfile.conf.ext
+echo '' >> auth-passwdfile.conf.ext
+echo '' >> auth-passwdfile.conf.ext
+
 
 
 mkdir /opt/dovecot/spool/private -p
