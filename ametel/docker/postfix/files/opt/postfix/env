@@ -22,7 +22,6 @@ if [ -n "$RECIPIENT_BCC_MAPS" ]; then
     /opt/postfix/bin/postconf "recipient_bcc_maps = ${RECIPIENT_BCC_MAPS}"
 fi
 if [ -n "$SENDER_BCC_MAPS" ]; then
-echo "hola" > /tmp/hola
     /opt/postfix/bin/postconf "sender_bcc_maps = ${SENDER_BCC_MAPS}"
 fi
 
@@ -35,7 +34,7 @@ echo "     $SMTPD_RECIPIENT_RESTRICTIONS" | awk -F',' '{$1=$1}1' OFS='\n    ' >>
 echo '' >> /opt/postfix/etc/main.cf
 echo '' >> /opt/postfix/etc/main.cf
 
-if [ -n $SSL ]; then
+if [ -n "$SSL" ]; then
     echo 'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${SSL}'/fullchain.pem' >> /opt/postfix/etc/main.cf
     echo 'smtpd_tls_key_file        = /etc/letsencrypt/live/'${SSL}'/privkey.pem' >> /opt/postfix/etc/main.cf
     echo 'smtpd_tls_received_header = yes' >> /opt/postfix/etc/main.cf

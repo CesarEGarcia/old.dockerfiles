@@ -52,9 +52,6 @@ virtual_gid_maps        = static:700
 virtual_alias_maps      = VIRTUAL_ALIAS_MAPS
 virtual_transport       = lmtp:inet:dovecot:24
 
-# Copias de mensajes
-#recipient_bcc_maps      = RECIPIENT_BCC_MAPS
-#sender_bcc_maps         = SENDER_BCC_MAPS
 
 # Autorespondedor
 # transport_maps = hash:/opt/usuarios/transport
