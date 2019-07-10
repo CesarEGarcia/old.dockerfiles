@@ -18,10 +18,11 @@ fi
 /opt/postfix/bin/postconf "virtual_alias_maps           = ${VIRTUAL_ALIAS_MAPS}"
 
 # Copias de mensajes
-if [ -n $RECIPIENT_BCC_MAPS ]; then
+if [ -n "$RECIPIENT_BCC_MAPS" ]; then
     /opt/postfix/bin/postconf "recipient_bcc_maps = ${RECIPIENT_BCC_MAPS}"
 fi
-if [ -n $SENDER_BCC_MAPS ]; then
+if [ -n "$SENDER_BCC_MAPS" ]; then
+echo "hola" > /tmp/hola
     /opt/postfix/bin/postconf "sender_bcc_maps = ${SENDER_BCC_MAPS}"
 fi
 
