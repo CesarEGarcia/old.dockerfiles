@@ -139,50 +139,6 @@ services:
       - localNetwork
 
 
-  postfix_ametel.cl:
-
-    # https://www.mind-it.info/2014/02/20/change-postfix-master-cf-postconf/
-
-    build:
-      context: docker/postfix
-
-    ports:
-      - "87.98.227.179:25:25"
-      - "87.98.227.179:465:465"
-      - "87.98.227.179:587:587"
-
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /home/dominios:/home/dominios
-      - ./etc:/opt/postfix/conf
-      - ./log.CL:/var/log/postfix
-      - ./spool.CL:/opt/postfix/spool
-
-    environment:
-      SMTPS:                    "yes"
-      SUBMISSION:               "yes"
-      SSL:                      "mail.ametel.cl"
-      SASL:                     "yes"
-      MULTI_INSTANCE_NAME:      "cl"
-      MY_HOSTNAME:              mail.ametel.cl
-      MY_NETWORKS:              127.0.0.1
-      SMTP_BIND_ADDRESS:        51.91.13.123
-      VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
-      VIRTUAL_MAILBOX_BASE:     /home/dominios
-      VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
-      VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
-
-      SMTPD_RECIPIENT_RESTRICTIONS: >
-        permit_mynetworks,
-        check_recipient_access hash:/opt/postfix/conf/bloquear_destinos,
-        check_sender_access hash:/opt/postfix/conf/bloquear_envios,
-        permit_sasl_authenticated,
-        reject
-
-    networks:
-      - localNetwork
-
-
 
   postmap:
     image: existo/postfix:3.4.5
@@ -241,28 +197,6 @@ services:
     networks:
       - localNetwork
 
-  dovecot_ametel.cl:
-
-    image: dovecot-existo:2.3.6-1
-
-    environment:
-      NAME: "ametel.cl"
-      SSL:  "mail.ametel.cl"
-
-    volumes:
-      - /home/dominios:/home/dominios
-      - /etc/letsencrypt:/etc/letsencrypt
-      - ./etc:/opt/dovecot/conf
-      - ./log:/var/log/dovecot
-
-    ports:
-      - "87.98.227.179:110:110"
-      - "87.98.227.179:143:143"
-      - "87.98.227.179:993:993"
-      - "87.98.227.179:995:995"
-
-    networks:
-      - localNetwork
 
 networks:
   localNetwork:
