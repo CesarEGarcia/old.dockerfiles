@@ -26,6 +26,8 @@ services:
       VIRTUAL_MAILBOX_BASE:     /home/dominios
       VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
       VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
+      RECIPIENT_BCC_MAPS:       regexp:/opt/postfix/conf/bcc_recibidos
+      # SENDER_BCC_MAPS:          regexp:/opt/postfix/conf/bcc_enviados
 
       SMTPD_RECIPIENT_RESTRICTIONS: >
         permit_mynetworks,
@@ -85,6 +87,8 @@ services:
       VIRTUAL_MAILBOX_BASE:     /home/dominios
       VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
       VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
+      RECIPIENT_BCC_MAPS:       regexp:/opt/postfix/conf/bcc_recibidos
+      SENDER_BCC_MAPS:          regexp:/opt/postfix/conf/bcc_enviados
 
       SMTPD_RECIPIENT_RESTRICTIONS: >
         permit_mynetworks,
@@ -127,6 +131,8 @@ services:
       VIRTUAL_MAILBOX_BASE:     /home/dominios
       VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
       VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
+      RECIPIENT_BCC_MAPS:       regexp:/opt/postfix/conf/bcc_recibidos
+      SENDER_BCC_MAPS:          regexp:/opt/postfix/conf/bcc_enviados
 
       SMTPD_RECIPIENT_RESTRICTIONS: >
         permit_mynetworks,
@@ -171,6 +177,8 @@ services:
       VIRTUAL_MAILBOX_BASE:     /home/dominios
       VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
       VIRTUAL_ALIAS_MAPS:       hash:/opt/postfix/conf/alias
+      RECIPIENT_BCC_MAPS:       regexp:/opt/postfix/conf/bcc_recibidos
+      SENDER_BCC_MAPS:          regexp:/opt/postfix/conf/bcc_enviados
 
       SMTPD_RECIPIENT_RESTRICTIONS: >
         permit_mynetworks,

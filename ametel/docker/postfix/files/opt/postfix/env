@@ -17,6 +17,15 @@ fi
 /opt/postfix/bin/postconf "virtual_mailbox_maps         = ${VIRTUAL_MAILBOX_MAPS}"
 /opt/postfix/bin/postconf "virtual_alias_maps           = ${VIRTUAL_ALIAS_MAPS}"
 
+# Copias de mensajes
+if [ -n $RECIPIENT_BCC_MAPS ]; then
+    /opt/postfix/bin/postconf "recipient_bcc_maps = ${RECIPIENT_BCC_MAPS}"
+fi
+if [ -n $SENDER_BCC_MAPS ]; then
+    /opt/postfix/bin/postconf "sender_bcc_maps = ${SENDER_BCC_MAPS}"
+fi
+
+
 # postconf no admite multilineas
 echo '' >> /opt/postfix/etc/main.cf
 echo '' >> /opt/postfix/etc/main.cf
@@ -61,9 +70,6 @@ if [ "$SASL" = "yes" ]; then
 fi
 
 
-#mkdir /opt/postfix/data
-#chown postfix.postfix /opt/postfix/data
-#rm /opt/postfix/data/master.lock
 chown vmail.vmail /home/dominios
 
 exit 0
