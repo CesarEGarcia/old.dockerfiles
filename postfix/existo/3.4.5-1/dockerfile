@@ -5,7 +5,7 @@ COPY files /
 
 RUN set -x \
 	&& cd /etc \
-	&& sed "s|^mail\.\*.*|mail\.\* /var/log/postfix/${MY_HOSTNAME}.maillog|" -i rsyslog.conf \
+	&& sed 's|^mail\.\*.*|mail\.\* /var/log/postfix/maillog|' -i rsyslog.conf \
 	&& mkdir /var/log/postfix \
 	&& chown postfix.postfix /var/log/postfix \
 	\
