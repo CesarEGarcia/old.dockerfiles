@@ -105,10 +105,9 @@ services:
       - localNetwork
 
 
-  postfix_moy:
+  moyselec.es.postfix:
 
-    build:
-      context: docker/postfix
+    image: postfix-existo:3.4.5-1
 
     ports:
       - "137.74.217.21:25:25"
@@ -119,18 +118,16 @@ services:
       - /etc/letsencrypt:/etc/letsencrypt
       - /home/dominios:/home/dominios
       - ./etc:/opt/postfix/conf
-      - ./log.MOY:/var/log/postfix
-      - ./spool.MOY:/opt/postfix/spool
+      - ./log:/var/log/postfix
+      - ./moyselec.es.spool:/opt/postfix/spool
 
     environment:
+      MY_HOSTNAME:              mail.moyselec.es
       SMTPS:                    "yes"
       SUBMISSION:               "yes"
-      SSL:                      "mail.moyselec.es"
+      SSL:                      "yes"
       SASL:                     "yes"
-      MULTI_INSTANCE_NAME:      "moyselec"
-      MY_HOSTNAME:              mail.moyselec.es
       MY_NETWORKS:              127.0.0.1
-      SMTP_BIND_ADDRESS:        51.91.13.123
       VIRTUAL_MAILBOX_DOMAINS:  hash:/opt/postfix/conf/domains
       VIRTUAL_MAILBOX_BASE:     /home/dominios
       VIRTUAL_MAILBOX_MAPS:     hash:/opt/postfix/conf/users
