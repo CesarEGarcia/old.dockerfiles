@@ -6,6 +6,7 @@ COPY files /
 RUN set -x \
     && echo PATH=/opt/postfix/bin/:$PATH > /etc/profile.d/path.sh \
 	&& echo export PATH >> /etc/profile.d/path.sh \
+	&& echo PATH=/opt/postfix/bin/:$PATH > /root/.bashrc \
 	&& cd /etc \
 	&& sed 's|^mail\.\*.*|mail\.\* /var/log/postfix/maillog|' -i rsyslog.conf \
 	&& mkdir /var/log/postfix \
