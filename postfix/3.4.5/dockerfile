@@ -47,6 +47,7 @@ RUN set -x \
     && /bin/sh postfix-install -non-interactive \
     \
     && /opt/postfix/bin/newaliases \
+    && ln -s /opt/postfix/bin/postmap /usr/local/bin \
     && echo PATH=/opt/postfix/bin/:$PATH > /etc/profile.d/path.sh \
     \
     && yum -y remove gcc \
