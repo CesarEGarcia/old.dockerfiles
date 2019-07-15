@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sed 's|/var/log/postfix/maillog|/var/log/postfix/'${MY_HOSTNAME}'.maillog|' -i /etc/rsyslog.conf
+sed 's|/var/log/postfix/maillog|/var/log/postfix/'${NAME}'.maillog|' -i /etc/rsyslog.conf
 
 if  [ "$SUBMISSION" = "yes" ]; then
     /opt/postfix/bin/postconf -M submission/inet="submission   inet   n   -   n   -   -   smtpd"
@@ -10,7 +10,7 @@ if  [ "$SMTPS" = "yes" ]; then
     /opt/postfix/bin/postconf -M smtps/inet="smtps   inet  n       -       n       -       -       smtpd"
 fi
 
-/opt/postfix/bin/postconf "myhostname                   = ${MY_HOSTNAME}"
+/opt/postfix/bin/postconf "myhostname                   = ${NAME}"
 /opt/postfix/bin/postconf "mynetworks                   = ${MY_NETWORKS}"
 /opt/postfix/bin/postconf "virtual_mailbox_domains      = ${VIRTUAL_MAILBOX_DOMAINS}"
 /opt/postfix/bin/postconf "virtual_mailbox_base         = ${VIRTUAL_MAILBOX_BASE}"
@@ -38,8 +38,8 @@ if [ "$SSL" = "yes" ]; then
     echo '' >> opt/postfix/etc/main.cf
     echo '##############' >> /opt/postfix/etc/main.cf
     echo '#${SSL} = yes' >> /opt/postfix/etc/main.cf
-    echo 'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${MY_HOSTNAME}'/fullchain.pem' >> /opt/postfix/etc/main.cf
-    echo 'smtpd_tls_key_file        = /etc/letsencrypt/live/'${MY_HOSTNAME}'/privkey.pem' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${NAME}'/fullchain.pem' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_tls_key_file        = /etc/letsencrypt/live/'${NAME}'/privkey.pem' >> /opt/postfix/etc/main.cf
     echo 'smtpd_tls_received_header = yes' >> /opt/postfix/etc/main.cf
     echo 'smtpd_tls_security_level  = may' >> /opt/postfix/etc/main.cf
     echo 'tls_random_source         = dev:/dev/urandom' >> /opt/postfix/etc/main.cf
