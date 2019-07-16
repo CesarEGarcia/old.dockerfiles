@@ -4,8 +4,6 @@ FROM existo/postfix:3.4.5
 COPY files /
 
 RUN set -x \
-	&& cd /etc \
-	&& sed 's|^mail\.\*.*|mail\.\* /var/log/postfix/maillog|' -i rsyslog.conf \
 	&& mkdir /var/log/postfix \
 	&& chown postfix.postfix /var/log/postfix \
 	\
@@ -26,6 +24,8 @@ RUN set -x \
 # SENDER_BCC_MAPS:          regexp:/opt/postfix/conf/bcc_enviados
 # SMTPD_RECIPIENT_RESTRICTIONS
 
+
+WORKDIR /opt/postfix
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
