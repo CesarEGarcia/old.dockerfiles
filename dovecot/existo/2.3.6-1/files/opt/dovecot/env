@@ -10,7 +10,8 @@ touch auth-passwdfile.conf.ext
 ################
 # 10-auth.conf
 ################
-sed 's/#disable_plaintext_auth = yes/disable_plaintext_auth = yes/' -i 10-auth.conf
+# disable_plaintext_auth = yes no permite autenticacion sin SSL
+sed 's/#disable_plaintext_auth = yes/disable_plaintext_auth = no/' -i 10-auth.conf
 sed 's/^auth_mechanisms =.*/auth_mechanisms = plain login/' -i 10-auth.conf
 sed 's/!include auth-system.conf.ext/#!include auth-system.conf.ext/' -i 10-auth.conf
 sed 's/#!include auth-passwdfile.conf.ext/!include auth-passwdfile.conf.ext/' -i 10-auth.conf
