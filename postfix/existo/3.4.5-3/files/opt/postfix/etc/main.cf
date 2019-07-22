@@ -1,0 +1,99 @@
+compatibility_level = 2
+
+queue_directory   = /opt/postfix/spool
+command_directory = /opt/postfix/bin
+daemon_directory  = /opt/postfix/daemon
+data_directory    = /opt/postfix/data
+sendmail_path     = /usr/sbin/sendmail
+newaliases_path   = /opt/postfix/bin/newaliases
+mailq_path        = /opt/postfix/bin/mailq
+manpage_directory = /usr/local/man
+sample_directory  = /opt/postfix/etc
+meta_directory    = /opt/postfix/etc
+html_directory    = no
+readme_directory  = no
+shlib_directory   = no
+
+mail_owner   = postfix
+setgid_group = postdrop
+
+
+myhostname    = MY_HOSTNAME
+myorigin      = $myhostname
+mydestination = $myhostname
+mynetworks    = MY_NETWORKS
+
+
+# inet_interfaces = $myhostname
+inet_interfaces = all
+inet_protocols  = ipv4
+# Fijar IP de salida de los mensajes
+# smtp_bind_address = IP
+
+unknown_local_recipient_reject_code = 550
+
+# home_mailbox = Maildir/
+
+# Tamano de los buzones
+mailbox_size_limit    = 0
+virtual_mailbox_limit = 0
+message_size_limit    = 51200000
+
+# Usuarios y dominios
+alias_maps              = hash:/etc/aliases
+virtual_mailbox_domains = VIRTUAL_DOMAINS
+virtual_mailbox_base    = VIRTUAL_MAILBOX_BASE
+virtual_mailbox_maps    = VIRTUAL_MAILBOX_MAPS
+virtual_minimum_uid     = 700
+virtual_uid_maps        = static:700
+virtual_gid_maps        = static:700
+virtual_alias_maps      = VIRTUAL_ALIAS_MAPS
+virtual_transport       = lmtp:inet:dovecot:24
+
+
+# Autorespondedor
+# transport_maps = hash:/opt/usuarios/transport
+# autorespuesta_destination_recipient_limit = 1
+
+bounce_queue_lifetime  = 4h
+maximal_queue_lifetime = 4h
+
+# Limitar el numero de entregas simultaneas
+smtp_destination_concurrency_limit = 2
+default_destination_rate_delay     = 5s
+lmtp_destination_rate_delay        = 0s
+
+# DEBUGGING CONTROL
+debug_peer_level = 2
+#debug_peer_list = IP
+#debugger_command =
+#	 PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
+#	 ddd $daemon_directory/$process_name $process_id & sleep 5
+
+
+# Configuracion para el SPAM
+disable_vrfy_command                = yes
+smtpd_delay_reject                  = yes
+smtpd_helo_required                 = yes
+smtpd_client_connection_count_limit = 10
+
+# policyd-spf_time_limit = 3600
+
+
+##smtpd_restriction_classes = email_out, email_in
+##email_out = check_recipient_access hash:/opt/usuarios/bloqueos, reject
+##email_in  = check_sender_access    hash:/opt/usuarios/bloqueos, reject
+
+# header_checks = regexp:/opt/usuarios/headers.MX
+
+#   check_policy_service unix:private/policyd-spf
+
+#check_client_access regexp:/opt/postfix/etc.MX/fqrdns.regexp
+
+# sender_dependent_default_transport_maps = hash:/opt/usuarios/sender_transport
+
+#smtpd_milters = unix:private/existoMilter, inet:localhost:8891
+#milter_default_action = accept
+#milter_protocol = 6
+#non_smtpd_milters = inet:localhost:8891
+
