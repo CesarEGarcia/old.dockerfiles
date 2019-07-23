@@ -32,7 +32,7 @@ fi
 if [ -n "$SMTPD_MILTERS" ]; then
     /opt/postfix/bin/postconf "smtpd_milters = ${SMTPD_MILTERS}"
 fi
-if [ -n "$NON_SMTPD_FILTERS" ]; then
+if [ -n "$NON_SMTPD_MILTERS" ]; then
     /opt/postfix/bin/postconf "non_smtpd_milters = ${NON_SMTPD_MILTERS}"
 fi
 
