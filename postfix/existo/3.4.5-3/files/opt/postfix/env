@@ -26,13 +26,14 @@ if [ -n "$SENDER_BCC_MAPS" ]; then
 fi
 
 # Milters filters
+/opt/postfix/bin/postconf "milter_default_action = accept"
+/opt/postfix/bin/postconf "milter_protocol = 6"
+
 if [ -n "$SMTPD_MILTERS" ]; then
     /opt/postfix/bin/postconf "smtpd_milters = ${SMTPD_MILTERS}"
-    /opt/postfix/bin/postconf "milter_default_action = accept"
-    /opt/postfix/bin/postconf "milter_protocol = 6"
-    if [ -n "$NON_SMTPD_FILTERS" ]; then
-        /opt/postfix/bin/postconf "non_smtpd_milters = ${NON_SMTPD_MILTERS}"
-    fi
+fi
+if [ -n "$NON_SMTPD_FILTERS" ]; then
+    /opt/postfix/bin/postconf "non_smtpd_milters = ${NON_SMTPD_MILTERS}"
 fi
 
 # postconf no admite multilineas

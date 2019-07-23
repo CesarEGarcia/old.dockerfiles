@@ -92,8 +92,3 @@ smtpd_client_connection_count_limit = 10
 
 # sender_dependent_default_transport_maps = hash:/opt/usuarios/sender_transport
 
-#smtpd_milters = unix:private/existoMilter, inet:localhost:8891
-#milter_default_action = accept
-#milter_protocol = 6
-#non_smtpd_milters = inet:localhost:8891
-
