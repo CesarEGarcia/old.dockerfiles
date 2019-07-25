@@ -1,0 +1,23 @@
+FROM centos:7.6.1810
+
+COPY node-v7.7.4-linux-x64.tar.gz /opt
+
+RUN set -x \
+    && cd /opt \
+    && tar xzvf node-v7.7.4-linux-x64.tar.gz \
+    && rm node-v7.7.4-linux-x64.tar.gz \
+    && ln -s /opt/node-v7.7.4-linux-x64/bin/node /usr/bin/node \
+    && ln -s /opt/node-v7.7.4-linux-x64/bin/npm /usr/bin/npm \
+    && ln -s /opt/node-v7.7.4-linux-x64/include/node /usr/include/node \
+    && yum -y install make \
+    && yum -y install gcc-c++ \
+    && yum install -y sendmail-devel \
+    && mkdir /opt/app \
+    && mkdir /opt/app/log \
+    && cd /opt/app \
+    && npm init -y \
+    && npm i milter
+
+
+WORKDIR /opt/app
+
