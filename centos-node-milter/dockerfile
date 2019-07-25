@@ -16,7 +16,8 @@ RUN set -x \
     && mkdir /opt/app/log \
     && cd /opt/app \
     && npm init -y \
-    && npm i milter
+    && npm i milter \
+    && npm i mailparser
 
 
 WORKDIR /opt/app
