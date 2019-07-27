@@ -1,0 +1,7 @@
+#!node
+
+const from = process.argv [1];
+const to   = process.argv [2];
+
+console.log (`mail from ${ from } to ${ to }`);
+

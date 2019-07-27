@@ -62,7 +62,7 @@ fi
 
 
 if [ "$SASL" = "yes" ]; then
-    echo '' >> opt/postfix/etc/main.cf
+    echo '' >> /opt/postfix/etc/main.cf
     echo '##############' >> /opt/postfix/etc/main.cf
     echo '#${SASL} = yes' >> /opt/postfix/etc/main.cf
     echo 'smtpd_sasl_auth_enable          = yes' >> opt/postfix/etc/main.cf
@@ -70,7 +70,7 @@ if [ "$SASL" = "yes" ]; then
     echo 'broken_sasl_auth_clients        = yes' >> opt/postfix/etc/main.cf
     echo 'smtpd_sasl_type                 = dovecot' >> opt/postfix/etc/main.cf
     echo 'smtpd_sasl_path                 = inet:dovecot:26' >> opt/postfix/etc/main.cf
-    #Meter una cabecera con el usuario autenticdo
+    #Meter una cabecera con el usuario autenticado
     # echo 'smtpd_sasl_authenticated_header = yes' >> opt/postfix/etc/main.cf
     echo '' >> /opt/postfix/etc/main.cf
     echo 'smtpd_relay_restrictions =' >> /opt/postfix/etc/main.cf
@@ -80,6 +80,17 @@ if [ "$SASL" = "yes" ]; then
     echo '  reject' >> /opt/postfix/etc/main.cf
     echo '' >> /opt/postfix/etc/main.cf
     echo '' >> /opt/postfix/etc/main.cf
+fi
+
+if [ "$AUTORESPUESTA" = "yes" ]; then
+    echo '' >> /opt/postfix/etc/master.conf
+    echo 'autorespuesta      unix  -       n       n       -       -       pipe' >> /opt/postfix/etc/master.conf
+    echo '    flags= user=nobody argv=/opt/postfix/etc/autorespuesta ${sender} ${recipient}' >> /opt/postfix/etc/master.conf
+    /opt/postfix/bin/postconf "autorespuesta_destination_recipient_limit = 1"
+
+    echo '' >> /opt/postfix/etc/transport
+    echo 'autorespuesta.e-xisto.net               autorespuesta:' >> /opt/postfix/etc/transport
+    /opt/postfix/bin/postmap /opt/postfix/etc/transport
 fi
 
 
