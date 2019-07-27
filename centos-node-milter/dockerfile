@@ -17,7 +17,7 @@ RUN set -x \
     && cd /opt/app \
     && npm init -y \
     && npm i milter \
-    && npm i mailparser
+    && npm i libmime
 
 
 WORKDIR /opt/app
