@@ -63,13 +63,6 @@ smtp_destination_concurrency_limit = 2
 default_destination_rate_delay     = 5s
 lmtp_destination_rate_delay        = 0s
 
-# DEBUGGING CONTROL
-debug_peer_level = 2
-#debug_peer_list = IP
-#debugger_command =
-#	 PATH=/bin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
-#	 ddd $daemon_directory/$process_name $process_id & sleep 5
-
 
 # Configuracion para el SPAM
 disable_vrfy_command                = yes

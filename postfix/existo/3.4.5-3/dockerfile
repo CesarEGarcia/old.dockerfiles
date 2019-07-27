@@ -4,13 +4,15 @@ FROM existo/postfix:3.4.5
 COPY files /
 
 RUN set -x \
-	&& nvm install v10.16 \
+	&& curl -sL https://rpm.nodesource.com/setup_10.x | bash - \
+	&& yum install -y nodejs \
+	\
 	&& cd /etc \
 	&& sed 's|^mail\.\*.*|mail\.\* /var/log/postfix/maillog|' -i rsyslog.conf \
 	&& mkdir /var/log/postfix \
 	&& chown postfix.postfix /var/log/postfix \
 	\
-	&& chmod 700 /opt/postfix/etc/autorespuesta \
+	&& chmod 777 /opt/postfix/etc/autorespuesta \
 	&& chmod 700 /opt/postfix/env
 
 # Variables de entorno
@@ -30,7 +32,10 @@ RUN set -x \
 # SMTPD_MILTERS:             unix:private/existoMilter, inet:localhost:8891
 # NON_SMTPD_MILTERS:         unix:private/existoMilter, inet:localhost:8891
 # AUTORESPUESTA:             [yes|no] Si activa o no la autorespuesta
+# DEBUG_LEVEL:               [0-10?]
+# DEBUG_IP:                  IP
 
+WORKDIR /opt/postfix
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
