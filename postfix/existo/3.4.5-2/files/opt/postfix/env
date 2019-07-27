@@ -34,7 +34,7 @@ echo '' >> /opt/postfix/etc/main.cf
 echo '' >> /opt/postfix/etc/main.cf
 
 if [ "$SSL" = "yes" ]; then
-    echo '' >> opt/postfix/etc/main.cf
+    echo '' >> /opt/postfix/etc/main.cf
     echo '##############' >> /opt/postfix/etc/main.cf
     echo '#${SSL} = yes' >> /opt/postfix/etc/main.cf
     echo 'smtpd_tls_cert_file       = /etc/letsencrypt/live/'${NAME}'/fullchain.pem' >> /opt/postfix/etc/main.cf
@@ -51,16 +51,16 @@ fi
 
 
 if [ "$SASL" = "yes" ]; then
-    echo '' >> opt/postfix/etc/main.cf
+    echo '' >> /opt/postfix/etc/main.cf
     echo '##############' >> /opt/postfix/etc/main.cf
     echo '#${SASL} = yes' >> /opt/postfix/etc/main.cf
-    echo 'smtpd_sasl_auth_enable          = yes' >> opt/postfix/etc/main.cf
-    echo 'smtpd_sasl_security_options     = noanonymous' >> opt/postfix/etc/main.cf
-    echo 'broken_sasl_auth_clients        = yes' >> opt/postfix/etc/main.cf
-    echo 'smtpd_sasl_type                 = dovecot' >> opt/postfix/etc/main.cf
-    echo 'smtpd_sasl_path                 = inet:dovecot:26' >> opt/postfix/etc/main.cf
+    echo 'smtpd_sasl_auth_enable          = yes' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_sasl_security_options     = noanonymous' >> /opt/postfix/etc/main.cf
+    echo 'broken_sasl_auth_clients        = yes' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_sasl_type                 = dovecot' >> /opt/postfix/etc/main.cf
+    echo 'smtpd_sasl_path                 = inet:dovecot:26' >> /opt/postfix/etc/main.cf
     #Meter una cabecera con el usuario autenticdo
-    # echo 'smtpd_sasl_authenticated_header = yes' >> opt/postfix/etc/main.cf
+    # echo 'smtpd_sasl_authenticated_header = yes' >> /opt/postfix/etc/main.cf
     echo '' >> /opt/postfix/etc/main.cf
     echo 'smtpd_relay_restrictions =' >> /opt/postfix/etc/main.cf
     echo '  permit_mynetworks' >> /opt/postfix/etc/main.cf
