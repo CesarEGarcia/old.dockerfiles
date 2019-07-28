@@ -4,14 +4,9 @@ FROM existo/postfix:3.4.5
 COPY files /
 
 RUN set -x \
-	&& curl -sL https://rpm.nodesource.com/setup_10.x | bash - \
-	&& yum install -y nodejs \
-	\
 	&& mkdir /var/log/postfix \
 	&& chown postfix.postfix /var/log/postfix \
 	\
-	&& cd /opt/postfix/autorespuesta
-	&& chmod 755 /opt/postfix/autorespuesta/index.js \
 	&& chmod 700 /opt/postfix/env
 
 # Variables de entorno
