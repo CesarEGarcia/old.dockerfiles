@@ -7,12 +7,11 @@ RUN set -x \
 	&& curl -sL https://rpm.nodesource.com/setup_10.x | bash - \
 	&& yum install -y nodejs \
 	\
-	&& cd /etc \
-	&& sed 's|^mail\.\*.*|mail\.\* /var/log/postfix/maillog|' -i rsyslog.conf \
 	&& mkdir /var/log/postfix \
 	&& chown postfix.postfix /var/log/postfix \
 	\
-	&& chmod 777 /opt/postfix/etc/autorespuesta \
+	&& cd /opt/postfix/autorespuesta
+	&& chmod 755 /opt/postfix/autorespuesta/index.js \
 	&& chmod 700 /opt/postfix/env
 
 # Variables de entorno

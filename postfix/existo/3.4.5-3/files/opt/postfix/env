@@ -8,7 +8,7 @@ echo '# EMAIL          discard:' >> /opt/postfix/etc/transport
 echo '' >> /opt/postfix/etc/transport
 
 
-sed 's|/var/log/postfix/maillog|/var/log/postfix/'${NAME}'.maillog|' -i /etc/rsyslog.conf
+# sed 's|/var/log/postfix/maillog|/var/log/postfix/'${NAME}'.maillog|' -i /etc/rsyslog.conf
 
 if  [ "$SUBMISSION" = "yes" ]; then
     /opt/postfix/bin/postconf -M submission/inet="submission   inet   n   -   n   -   -   smtpd"
@@ -18,12 +18,15 @@ if  [ "$SMTPS" = "yes" ]; then
     /opt/postfix/bin/postconf -M smtps/inet="smtps   inet  n       -       n       -       -       smtpd"
 fi
 
-/opt/postfix/bin/postconf "myhostname                   = ${NAME}"
-/opt/postfix/bin/postconf "mynetworks                   = ${MY_NETWORKS}"
-/opt/postfix/bin/postconf "virtual_mailbox_domains      = ${VIRTUAL_MAILBOX_DOMAINS}"
-/opt/postfix/bin/postconf "virtual_mailbox_base         = ${VIRTUAL_MAILBOX_BASE}"
-/opt/postfix/bin/postconf "virtual_mailbox_maps         = ${VIRTUAL_MAILBOX_MAPS}"
-/opt/postfix/bin/postconf "virtual_alias_maps           = ${VIRTUAL_ALIAS_MAPS}"
+/opt/postfix/bin/postconf "myhostname              = ${NAME}"
+/opt/postfix/bin/postconf "mynetworks              = ${MY_NETWORKS}"
+/opt/postfix/bin/postconf "virtual_mailbox_domains = ${VIRTUAL_MAILBOX_DOMAINS}"
+/opt/postfix/bin/postconf "virtual_mailbox_base    = ${VIRTUAL_MAILBOX_BASE}"
+/opt/postfix/bin/postconf "virtual_mailbox_maps    = ${VIRTUAL_MAILBOX_MAPS}"
+/opt/postfix/bin/postconf "virtual_alias_maps      = ${VIRTUAL_ALIAS_MAPS}"
+/opt/postfix/bin/postconf "transport_maps          = hash:/opt/postfix/etc/transport"
+/opt/postfix/bin/postconf "maillog_file            = /var/log/postfix/${NAME}.maillog"
+
 
 # Copias de mensajes
 if [ -n "$RECIPIENT_BCC_MAPS" ]; then
