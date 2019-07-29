@@ -1,0 +1,9 @@
+FROM mysql:5.7
+
+ENV MYSQL_ROOT_PASSWORD dmnstrdrClv
+
+RUN \
+    echo "[client]\nuser=root\npassword=${MYSQL_ROOT_PASSWORD}" > /root/.my.cnf \
+    && echo "sql-mode=\"NO_AUTO_CREATE_USER\"" >> /etc/mysql/mysql.conf.d/mysqld.cnf \
+    && echo "character-set-server=utf8" >> /etc/mysql/mysql.conf.d/mysqld.cnf \
+    && echo "collation-server=utf8_general_ci" >> /etc/mysql/mysql.conf.d/mysqld.cnf
