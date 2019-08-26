@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "127.0.0.1    mysql" > /etc/hosts
+
+ssh -f -N -L 3306:localhost:3306  -o ServerAliveInterval=60 mysqldev@mysqldev.existo.net
