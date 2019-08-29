@@ -1,4 +1,4 @@
-FROM existodw/apache:2.4.34
+FROM existo/apache:2.4.34
 
 ENV VERSION 7.2.19
 

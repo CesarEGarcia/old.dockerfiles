@@ -1,4 +1,4 @@
-FROM existodw/php:7.1.19
+FROM existo/php:7.1.19
 
 LABEL VERSION existo-prod:7.1.0
 LABEL HTTPD 3.4.34
@@ -36,7 +36,7 @@ RUN set -x \
     && mkdir /tmp/pdfs \
     && mkdir /tmp/uploads \
     && touch /var/log/email.log \
-    && chown apache.apache /tmp/pdfs /tmp/uploads /var/log/email.log 
+    && chown apache.apache /tmp/pdfs /tmp/uploads /var/log/email.log
 
- 
+
 
