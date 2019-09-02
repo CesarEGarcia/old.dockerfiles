@@ -2,7 +2,7 @@ FROM existo/apache:2.4.34
 
 ENV VERSION 7.2.19
 
-COPY files/ /
+# COPY files/ /
 
 RUN set -x \
     && yum -y install libxml2-devel \
@@ -137,3 +137,5 @@ RUN set -x \
     && yum -y remove autoconf \
     && yum -y remove wget \
     && yum clean all
+
+COPY files/ /

@@ -7,7 +7,7 @@ LABEL PHPMYADMIN 4.8.2
 COPY files/ /
 
 RUN set -x \
-    && yum -y install wget \
+    && yum -y install wget
     #&& yum -y install ImageMagick \
     # Necesarios para wkhtmltopdf
     #&& yum -y install poppler-utils \
@@ -17,14 +17,17 @@ RUN set -x \
     # Caracteres japoneses para wkhtml
     #&&  yum -y install wqy-microhei-fonts \
     #&& fc-cache -f -v \
-    \
+
+RUN set -x \
     && cd /opt \
     &&  wget https://files.phpmyadmin.net/phpMyAdmin/4.8.2/phpMyAdmin-4.8.2-all-languages.tar.gz \
     && tar xzvf phpMyAdmin-4.8.2-all-languages.tar.gz \
     && rm phpMyAdmin-4.8.2-all-languages.tar.gz \
     && cp -r phpMyAdmin-4.8.2-all-languages/. phpMyAdmin \
-    && rm -R phpMyAdmin-4.8.2-all-languages \
-    \
+    && rm -R phpMyAdmin-4.8.2-all-languages
+
+
+RUN set -x \
     && cd /tmp \
     #&& wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.centos7.x86_64.rpm \
     #&& rpm -i wkhtmltox-0.12.5-1.centos7.x86_64.rpm \
@@ -33,7 +36,7 @@ RUN set -x \
     && yum clean all \
     \
     && mkdir /tmp/pdfs \
-    && mkdir /tmp/uploads \
+    && mkdir /tmp/uploads
     #&& touch /var/log/email.log \
     #&& chown apache.apache /tmp/pdfs /tmp/uploads /var/log/email.log \
     #&& chmod 755 /usr/bin/mysqldev
