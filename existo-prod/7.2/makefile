@@ -3,6 +3,9 @@ VERSION = 7.2.1
 build:
 	docker image build -t existo-prod:$(VERSION) .
 
+nocache:
+	docker image build -t existo-prod:$(VERSION) --no-cache .
+
 # latest:
 # 	docker image build -t existo-dev:$(VERSION) -t existo-dev:7.2.latest .
 
