@@ -1,7 +1,8 @@
-VERSION = 1.3.7
+NAME = roundcube
+VERSION = 1.3.10
 
-build: 
-	docker image build -t roundcube:$(VERSION) .
+build:
+	docker image build -t ${NAME}:$(VERSION) .
 
 # latest:
 # 	docker image build -t existo-dev:$(VERSION) -t existo-dev:7.1.latest .

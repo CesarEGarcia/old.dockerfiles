@@ -1,0 +1,30 @@
+MySQLServer         {MYSQL_SERVER}
+MySQLPort           {MYSQL_PORT}
+MySQLUser           {MYSQL_USER}
+MySQLPassword       {MYSQL_PASSWORD}
+MySQLDatabase       {MYSQL_DATABASE}
+MySQLCrypt          md5
+MySQLDefaultUID     600
+MySQLDefaultGID     600
+MySQLGetPW          SELECT clave        FROM FTP WHERE usuario="\L" AND estado="1" AND (ip = "" OR ip="\R")
+MySQLGetDir         SELECT path         FROM FTP WHERE usuario="\L" AND estado="1" AND (ip = "" OR ip="\R")
+MySQLGetBandwidthUL SELECT limiteSubida FROM FTP WHERE usuario="\L" AND estado="1" AND (ip = "" OR ip="\R")
+MySQLGetBandwidthDL SELECT limiteBajada FROM FTP WHERE usuario="\L" AND estado="1" AND (ip = "" OR ip="\R")
+MySQLGetQTASZ       SELECT quotaSize    FROM FTP WHERE usuario="\L" AND estado="1" AND (ip = "" OR ip="\R")
+MySQLGetQTAFS       SELECT quotaFiles   FROM FTP WHERE usuario="\L" AND estado="1" AND (ip = "" OR ip="\R")
+
+
+
+cat << EOM > /etc/pure-ftpd/db/mysql.conf
+#MYSQLSocket      /var/run/mysqld/mysqld.sock
+MYSQLServer     $MYSQL_HOST
+MYSQLPort       $MYSQL_PORT
+MYSQLUser       $MYSQL_USER
+MYSQLPassword   $MYSQL_PASSWORD
+MYSQLDatabase   $MYSQL_DATABASE
+MYSQLCrypt      md5
+MYSQLGetPW      SELECT Password FROM users WHERE User="\L" AND status="1"
+MYSQLGetUID     SELECT Uid FROM users WHERE User="\L" AND status="1"
+MYSQLGetGID     SELECT Gid FROM users WHERE User="\L"AND status="1"
+MYSQLGetDir     SELECT Dir FROM users WHERE User="\L"AND status="1"
+EOM

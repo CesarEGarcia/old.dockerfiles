@@ -1,0 +1,68 @@
+FROM centos:7
+
+LABEL VERSION 1.0.49
+
+ENV VERSION="1.0.49" \
+    MYSQL_SERVER="servidor" \
+    MYSQL_PORT="3306" \
+    MYSQL_USER="usuario" \
+    MYSQL_PASSWORD="password" \
+    MYSQL_DATABASE="database"
+
+RUN set -x \
+    && yum -y install wget \
+	&& yum -y install gcc \
+    && yum -y install mariadb-devel \
+    && yum -y install openssl-devel \
+    && yum -y install systemtap \
+    && cd /usr/local/src \
+    && wget https://download.pureftpd.org/pub/pure-ftpd/releases/pure-ftpd-${VERSION}.tar.gz \
+    && tar xzvf pure-ftpd-${VERSION}.tar.gz \
+    && rm pure-ftpd-${VERSION}.tar.gz \
+    && cd pure-ftpd-${VERSION} \
+    && cd /usr/local/src/pure-ftpd-${VERSION} \
+    && ./configure \
+        --prefix=/opt/pure-ftpd \
+        --with-altlog \
+        --with-ftpwho \
+        --with-language=spanish \
+        --with-mysql \
+        --with-peruserlimits \
+        --with-quotas \
+        --with-throttling \
+        --with-virtualchroot \
+        --without-inetd \
+        --without-shadow \
+        --without-usernames \
+        --without-ldap \
+        --without-pam \
+        --without-puredb \
+        --with-tls \
+        --with-language=spanish \
+    \
+    && make \
+    && make check \
+    && make install \
+    \
+    && cd .. \
+    && rm -Rf pure-ftpd-${VERSION} \
+    \
+    && cd /opt/pure-ftpd/etc \
+    && cp pure-ftpd.conf pure-ftpd.conf.dist \
+    \
+    && yum -y remove gcc \
+    && yum -y remove mariadb-devel \
+    && yum -y remove openssl-devel \
+    && yum -y remove systemtap \
+    && yum -y remove wget \
+    && yum clean all \
+    && rm -rf /var/cache/yum/*
+
+
+COPY files/ /
+
+# CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+
+# CMD ["/usr/sbin/init"]
+CMD ["/opt/pure-ftpd/run"]
+

@@ -6,4 +6,6 @@ RUN \
     echo "[client]\nuser=root\npassword=${MYSQL_ROOT_PASSWORD}" > /root/.my.cnf \
     && echo "sql-mode=\"NO_AUTO_CREATE_USER\"" >> /etc/mysql/mysql.conf.d/mysqld.cnf \
     && echo "character-set-server=utf8" >> /etc/mysql/mysql.conf.d/mysqld.cnf \
-    && echo "collation-server=utf8_general_ci" >> /etc/mysql/mysql.conf.d/mysqld.cnf
+    && echo "collation-server=utf8_general_ci" >> /etc/mysql/mysql.conf.d/mysqld.cnf \
+    && echo "general_log=OFF" >> /etc/mysql/mysql.conf.d/mysqld.cnf \
+    && echo "general_log_file=/var/log/sql.log" >> /etc/mysql/mysql.conf.d/mysqld.cnf

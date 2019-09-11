@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# sed 's|{MYSQL_SERVER}|'${MYSQL_SERVER}'|'     -i /opt/pure_ftpd/etc/mysql.conf \
+# && sed 's|{MYSQL_PORT}|'${MYSQL_PORT}'|'         -i /opt/pure_ftpd/etc/mysql.conf \
+# && sed 's|{MYSQL_USER}|'${MYSQL_USER}'|'         -i /opt/pure_ftpd/etc/mysql.conf \
+# && sed 's|{MYSQL_PASSWORD}|'${MYSQL_PASSWORD}'|' -i /opt/pure_ftpd/etc/mysql.conf \
+# && sed 's|{MYSQL_DATABASE}|'${MYSQL_DATABASE}'|' -i /opt/pure_ftpd/etc/mysql.conf \
+
+/opt/pure-ftpd/sbin/pure-ftpd \
+    --maxclientsnumber 25 \
+    --maxclientsperip 10 \
+    --brokenclientscompatibility \
+    --maxidletime 60 \
+    --noanonymous \
+    --dontresolve  \
+    --anonymouscantupload \
+    --antiwarez \
+    --minuid 500 \
+    --maxdiskusagepct 95 \
+    --altlog Stats:/var/log/xferlog \
+    --chrooteveryone \
+    --displaydotfiles \
+    --customerproof \
+    --verboselog \
+    --passiveportrange 30020:30029 \
+    --login mysql:/opt/pure-ftpd/etc/mysql.conf
+
+    -O xferlog:/var/log/pureftp-xferlog
+-O clf:/var/log/pure-ftpd/transfer.log
