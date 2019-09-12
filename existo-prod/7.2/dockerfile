@@ -7,8 +7,8 @@ LABEL PHPMYADMIN 4.8.2
 COPY files/ /
 
 RUN set -x \
-    && groupadd web \
-    && useradd -d /home/web -s /bin/false -g web -M web \
+    && groupadd -g 600 web \
+    && useradd -d /home/web -s /bin/false -g web -M -u 600 web \
     \
     && yum -y install wget \
     #&& yum -y install ImageMagick \
@@ -42,7 +42,10 @@ RUN set -x \
     #&& touch /var/log/email.log \
     && chown web.web /home/no-server \
     && chown web.web /tmp/pdfs /tmp/uploads /tmp/sesiones
+    # && chown web.web /var/log/http/php.log \
+    # && chown web.web /var/log/httpd
     #&& chown web.web /var/log/email.log \
     #&& chmod 755 /usr/bin/mysqldev
 
 
+CMD /opt/httpd/start.sh
