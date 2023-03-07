@@ -2,6 +2,13 @@ FROM docker.existo.net/httpd:7.2.2
 
 LABEL VERSION roundcube:1.3.10
 
+ENV IMAP_SERVER="localhost" \
+    SMTP_SERVER="" \
+    SMTP_PORT="25" \
+    SMTP_USER="" \
+    SMTP_PASS="" \
+    INSTALLER="false"
+
 RUN set -x \
     && yum -y install wget \
     \
@@ -28,6 +35,19 @@ RUN set -x \
     && echo -e "\tDeny from all" >> /opt/httpd/conf/directory.conf \
     && echo -e "</Directory>" >> /opt/httpd/conf/directory.conf \
     && echo "" >> /opt/httpd/conf/directory.conf \
+    \
+    && echo "" >> /opt/httpd/env.sh \
+    && echo "sed 's/{INSTALLER}/'"\${INSTALLER}"'/' -i /opt/roundcube/config/config.inc.php" >> /opt/httpd/env.sh \
+    && echo "sed 's/{IMAP_SERVER}/'"\${IMAP_SERVER}"'/' -i /opt/roundcube/config/config.inc.php" >> /opt/httpd/env.sh \
+    && echo "sed 's/{SMTP_SERVER}/'"\${SMTP_SERVER}"'/' -i /opt/roundcube/config/config.inc.php" >> /opt/httpd/env.sh \
+    && echo "sed 's/{SMTP_PORT}/'"\${SMTP_PORT}"'/' -i /opt/roundcube/config/config.inc.php" >> /opt/httpd/env.sh \
+    && echo "sed 's/{SMTP_USER}/'"\${SMTP_USER}"'/' -i /opt/roundcube/config/config.inc.php" >> /opt/httpd/env.sh \
+    && echo "sed 's/{SMTP_PASS}/'"\${SMTP_PASS}"'/' -i /opt/roundcube/config/config.inc.php" >> /opt/httpd/env.sh \
+    && echo "" >> /opt/httpd/env.sh >> /opt/httpd/env.sh \
+    && echo "if [ \"\$INSTALLER\" = \"false\" ]; then" >> /opt/httpd/env.sh \
+    && echo -e "\trm -Rf /opt/roundcube/installer" >> /opt/httpd/env.sh \
+    && echo "fi" >> /opt/httpd/env.sh \
+    && echo "" >> /opt/httpd/env.sh >> /opt/httpd/env.sh \
     \
     && mkdir -p /tmp/roundcube \
     && chown web.web /tmp/roundcube

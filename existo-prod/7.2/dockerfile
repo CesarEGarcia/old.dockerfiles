@@ -21,12 +21,44 @@ RUN set -x \
     #&&  yum -y install wqy-microhei-fonts \
     #&& fc-cache -f -v \
     \
+    && cd /tmp \
+    && curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py" \
+    && python get-pip.py \
+    && rm /tmp/get-pip.py \
+    && pip install -U certbot \
+    && mkdir -p /opt/certbot \
+    && echo -e ""  >> /opt/httpd/conf/directory.conf \
+    && echo -e ""  >> /opt/httpd/conf/directory.conf \
+    && echo -e "<Directory \"/opt/certbot/.well-known\">" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tAllowOverride None" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tOrder allow,deny" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tAllow from all" >> /opt/httpd/conf/directory.conf \
+    && echo -e "</Directory>" >> /opt/httpd/conf/directory.conf \
+    && echo -e ""  >> /opt/httpd/conf/directory.conf \
+    && echo "#!/bin/bash" >> /usr/local/bin/certbot \
+    && echo "" >> /usr/local/bin/certbot \
+    && echo "/usr/bin/certbot certonly --webroot -w /opt/certbot \$@" >> /usr/local/bin/certbot \
+    && chmod 755 /usr/local/bin/certbot \
+    && echo -e ""  >> /opt/httpd/conf/alias.conf \
+    && echo -e ""  >> /opt/httpd/conf/alias.conf \
+    && echo -e "Alias \"/.well-known\" \"/opt/certbot/.well-known\""  >> /opt/httpd/conf/alias.conf \
+    && echo -e ""  >> /opt/httpd/conf/alias.conf \
+    \
     && cd /opt \
     &&  wget https://files.phpmyadmin.net/phpMyAdmin/4.8.2/phpMyAdmin-4.8.2-all-languages.tar.gz \
     && tar xzvf phpMyAdmin-4.8.2-all-languages.tar.gz \
     && rm phpMyAdmin-4.8.2-all-languages.tar.gz \
     && cp -r phpMyAdmin-4.8.2-all-languages/. phpMyAdmin \
     && rm -R phpMyAdmin-4.8.2-all-languages \
+    && echo -e ""  >> /opt/httpd/conf/directory.conf \
+    && echo -e "<Directory \"/opt/phpMyAdmin\">" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tphp_value memory_limit 256M" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tAllowOverride None" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tOptions None" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tOrder allow,deny" >> /opt/httpd/conf/directory.conf \
+    && echo -e "\tAllow from all" >> /opt/httpd/conf/directory.conf \
+    && echo -e "</Directory>" >> /opt/httpd/conf/directory.conf \
+    && echo -e ""  >> /opt/httpd/conf/directory.conf \
     \
     && cd /tmp \
     #&& wget https://downloads.wkhtmltopdf.org/0.12/0.12.5/wkhtmltox-0.12.5-1.centos7.x86_64.rpm \

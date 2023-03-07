@@ -18,18 +18,18 @@ RUN set -x \
 	&& yum -y install wget \
 	\
 	&& cd /usr/local/src \
-	&& wget http://apache.uvigo.es//apr/apr-1.6.3.tar.gz \ 
+	&& wget http://apache.uvigo.es//apr/apr-1.6.3.tar.gz \
 	&& tar xzvf apr-1.6.3.tar.gz \
 	&& rm apr-1.6.3.tar.gz \
 	&& cd apr-1.6.3 \
-	&& ./configure \ 
+	&& ./configure \
 		--prefix=/opt/apr-1.6.3 \
 	&& make \
 	&& make install \
 	&& cd .. \
 	&& rm -Rf apr-1.6.3 \
 	\
-	&& wget http://apache.uvigo.es//apr/apr-util-1.6.1.tar.gz \ 
+	&& wget http://apache.uvigo.es//apr/apr-util-1.6.1.tar.gz \
 	&& tar xzvf apr-util-1.6.1.tar.gz \
 	&& rm apr-util-1.6.1.tar.gz \
 	&& cd apr-util-1.6.1 \

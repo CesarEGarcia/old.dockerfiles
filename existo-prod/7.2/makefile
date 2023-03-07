@@ -15,7 +15,7 @@ publish:
 	docker push docker.existo.net/${NAME}:$(VERSION)
 
 test:
-	docker container run -d --rm --name test existo-dev:$(VERSION)
+	docker container run -d --rm --name test ${NAME}:$(VERSION)
 	docker container exec -ti test bash
 	docker container rm -f test
 

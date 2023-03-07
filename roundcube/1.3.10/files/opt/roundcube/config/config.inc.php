@@ -1,6 +1,7 @@
 <?php
 
-$config ['enable_installer'] = true;
+// Para testear la instalación poner la url /installer
+$config ['enable_installer'] = {INSTALLER};
 
 /* Local configuration for Roundcube Webmail */
 
@@ -31,7 +32,7 @@ $config['db_dsnw'] = 'mysql://roundcube:rc_Admin@mysql/roundcube';
 // For example %n = mail.domain.tld, %t = domain.tld
 // WARNING: After hostname change update of mail_host column in users table is
 //          required to match old user data records with the new host.
-$config['default_host'] = 'localhost';
+$config['default_host'] = '{IMAP_SERVER}';
 
 // provide an URL where a user can get support for this Roundcube installation
 // PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
@@ -61,12 +62,14 @@ $config['plugins'] = array('zipdownload');
 // RFC1766 formatted language name like en_US, de_DE, de_CH, fr_FR, pt_BR
 $config['language'] = 'es_Es';
 
+$config['mime_types'] = '/opt/httpd/conf/mime.types';
+
 
 // $config ['include_host_config'] = true;
-// $config ['smtp_server']         = '';
-// $config ['smtp_port']           = 25;
-// $config ['smtp_user']           = '';
-// $config ['smtp_pass']           = '';
+$config ['smtp_server']         = '{SMTP_SERVER}';
+$config ['smtp_port']           = {SMTP_PORT};
+$config ['smtp_user']           = '{SMTP_USER}';
+$config ['smtp_pass']           = '{SMTP_PASS}';
 // $config ['support_url']         = '';
 // $config ['product_name']        = 'Roundcube Webmail';
 // $config ['plugins']             = array('archive', 'zipdownload', 'password', 'managesieve');

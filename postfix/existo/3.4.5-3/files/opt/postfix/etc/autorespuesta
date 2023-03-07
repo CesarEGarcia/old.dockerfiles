@@ -1,6 +1,0 @@
-#!/bin/bash
-
-curl -s -X POST \
-    -H "Content-Type: application/json" \
-    -d '{"from": "'$1'", "to": "'$2'", "server": "'$NAME'"}' \
-    http://autorespuesta:3000/autorespuesta
